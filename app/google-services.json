@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "544382518830",
+    "firebase_url": "https://opsc-auth-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "opsc-auth",
     "storage_bucket": "opsc-auth.appspot.com"
   },

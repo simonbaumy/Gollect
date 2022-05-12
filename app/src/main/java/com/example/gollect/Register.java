@@ -109,7 +109,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
 
                 if(task.isSuccessful()){
                     User user = new User(username, email);
-                    FirebaseDatabase.getInstance().getReference("Users")
+                    FirebaseDatabase.getInstance("https://opsc-auth-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Users")
                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                             .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
