@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Gollect">
         <activity
-            android:name=".CreateCategory"
+            android:name=".CreateCollection"
             android:exported="false" />
         <activity
             android:name=".Home"
