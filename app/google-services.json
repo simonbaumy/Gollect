@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "544382518830",
+    "project_id": "opsc-auth",
+    "storage_bucket": "opsc-auth.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:544382518830:android:116f9a931c7abfb95201bf",
+        "android_client_info": {
+          "package_name": "com.example.gollect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "544382518830-preutpe5dc8qlsv9e40oo5e55edoaopq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8r_jFGGUiZojJvd6Hq9j3GYQaiEovgUM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "544382518830-preutpe5dc8qlsv9e40oo5e55edoaopq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
