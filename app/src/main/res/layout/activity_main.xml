@@ -55,14 +55,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/login_username"
+        android:id="@+id/login_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:height="50dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint="@string/username"
+        android:hint="@string/email"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textAlignment="center"
@@ -86,11 +86,11 @@
         android:minHeight="48dp"
         android:textAlignment="center"
         android:textColorHint="#757575"
-        app:layout_constraintStart_toStartOf="@+id/login_username"
-        app:layout_constraintTop_toBottomOf="@+id/login_username" />
+        app:layout_constraintStart_toStartOf="@+id/login_email"
+        app:layout_constraintTop_toBottomOf="@+id/login_email" />
 
     <Button
-        android:id="@+id/register_button"
+        android:id="@+id/signIn_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="156dp"
