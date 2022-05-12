@@ -10,7 +10,9 @@
         android:theme="@style/Theme.Gollect">
         <activity
             android:name=".Home"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/title_activity_home"
+            android:theme="@style/Theme.Gollect.NoActionBar" />
         <activity
             android:name=".Register"
             android:exported="false" />
