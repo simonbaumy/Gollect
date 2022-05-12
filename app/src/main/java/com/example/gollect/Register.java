@@ -2,6 +2,8 @@ package com.example.gollect;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -117,12 +119,16 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                                     if
                                     (task.isSuccessful()){
                                         Toast.makeText(Register.this, "User has been registered successfully!", Toast.LENGTH_LONG).show();
+                                        progressBar.setVisibility(View.GONE);
+
+                                        startActivity(new Intent(Register.this, MainActivity.class));
                                     }
                                     else
                                     {
                                         Toast.makeText(Register.this, "Failed to register. Try Again!", Toast.LENGTH_LONG).show();
+                                        progressBar.setVisibility(View.GONE);
                                     }
-                                    progressBar.setVisibility(View.GONE);
+
                                 }
                             });
                 }
