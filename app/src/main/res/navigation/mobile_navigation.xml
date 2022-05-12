@@ -12,16 +12,34 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.gollect.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_favourits"
+        android:name="com.example.gollect.ui.Favourites.FavouritesFragment"
+        android:label="@string/menu_favourites"
+        tools:layout="@layout/fragment_favourites" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/nav_recycleBin"
         android:name="com.example.gollect.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:label="@string/menu_recycleBin"
+        tools:layout="@layout/fragment_favourites" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.gollect.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/fragment_favourites" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.example.gollect.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_recycleBin"
+        tools:layout="@layout/fragment_favourites" />
+
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.example.gollect.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_recycleBin"
+        tools:layout="@layout/fragment_favourites" />
 
 
 </navigation>

@@ -9,6 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Gollect">
         <activity
+            android:name=".CreateCategory"
+            android:exported="false" />
+        <activity
             android:name=".Home"
             android:exported="false"
             android:label="@string/title_activity_home"
