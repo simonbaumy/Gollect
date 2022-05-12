@@ -3,27 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Michael/AndroidStudioProjects/Gollect/app/src/main/res/layout/activity_create_category.xml" value="0.25" />
-        <entry key="..\:/Users/Michael/AndroidStudioProjects/Gollect/app/src/main/res/layout/activity_create_item_page.xml" value="0.3104166666666667" />
-        <entry key="..\:/Users/Michael/AndroidStudioProjects/Gollect/app/src/main/res/layout/activity_home.xml" value="0.5" />
-        <entry key="..\:/Users/Michael/AndroidStudioProjects/Gollect/app/src/main/res/layout/activity_main.xml" value="0.5458333333333333" />
-        <entry key="..\:/Users/Michael/AndroidStudioProjects/Gollect/app/src/main/res/layout/activity_register.xml" value="0.5458333333333333" />
-        <entry key="..\:/Users/Michael/AndroidStudioProjects/Gollect/app/src/main/res/layout/activity_selected_collection_page.xml" value="0.3104166666666667" />
-        <entry key="..\:/Users/Michael/AndroidStudioProjects/Gollect/app/src/main/res/layout/activity_view_item_page.xml" value="0.3104166666666667" />
-        <entry key="..\:/Users/Michael/AndroidStudioProjects/Gollect/app/src/main/res/layout/app_bar_home.xml" value="0.25" />
-        <entry key="..\:/Users/Michael/AndroidStudioProjects/Gollect/app/src/main/res/layout/content_home.xml" value="0.33" />
-        <entry key="..\:/Users/Michael/AndroidStudioProjects/Gollect/app/src/main/res/layout/fragment_favourites.xml" value="0.2423076923076923" />
-        <entry key="..\:/Users/Michael/AndroidStudioProjects/Gollect/app/src/main/res/layout/fragment_gallery.xml" value="0.29635416666666664" />
-        <entry key="..\:/Users/Michael/AndroidStudioProjects/Gollect/app/src/main/res/layout/fragment_home.xml" value="0.29635416666666664" />
-        <entry key="..\:/Users/Michael/AndroidStudioProjects/Gollect/app/src/main/res/layout/fragment_profile.xml" value="0.29635416666666664" />
-        <entry key="..\:/Users/Michael/AndroidStudioProjects/Gollect/app/src/main/res/layout/fragment_recyclebin.xml" value="0.3104166666666667" />
-        <entry key="..\:/Users/Michael/AndroidStudioProjects/Gollect/app/src/main/res/layout/fragment_settings.xml" value="0.3104166666666667" />
-        <entry key="..\:/Users/Michael/AndroidStudioProjects/Gollect/app/src/main/res/layout/fragment_slideshow.xml" value="0.29635416666666664" />
-        <entry key="..\:/Users/Michael/AndroidStudioProjects/Gollect/app/src/main/res/layout/nav_header_home.xml" value="0.29635416666666664" />
-        <entry key="..\:/Users/Michael/AndroidStudioProjects/Gollect/app/src/main/res/menu/activity_main_drawer.xml" value="0.29635416666666664" />
-        <entry key="..\:/Users/Michael/AndroidStudioProjects/Gollect/app/src/main/res/menu/home.xml" value="0.29635416666666664" />
+        <entry key="..\:/Users/Simon/Downloads/Gollect/app/src/main/res/layout/activity_home.xml" value="0.2767210144927536" />
         <entry key="..\:/Users/Simon/Downloads/Gollect/app/src/main/res/layout/activity_main.xml" value="0.28125" />
         <entry key="..\:/Users/Simon/Downloads/Gollect/app/src/main/res/layout/activity_register.xml" value="0.28125" />
+        <entry key="..\:/Users/Simon/Downloads/Gollect/app/src/main/res/layout/activity_test.xml" value="0.30052083333333335" />
+        <entry key="..\:/Users/Simon/Downloads/Gollect/app/src/main/res/layout/content_home.xml" value="0.28489583333333335" />
       </map>
     </option>
   </component>

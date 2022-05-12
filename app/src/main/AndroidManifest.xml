@@ -9,6 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Gollect" >
         <activity
+            android:name=".Test"
+            android:exported="false" />
+        <activity
             android:name=".SelectedCollectionPage"
             android:exported="false" />
         <activity
