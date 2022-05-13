@@ -2,13 +2,65 @@ package com.example.gollect;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+
+import com.example.gollect.ui.CollectionAdapter;
+
+import java.util.ArrayList;
 
 public class HomeOld extends AppCompatActivity {
+
+
+    public static ArrayList<GollectCollection> collectionList = new ArrayList<GollectCollection>();
+
+    private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_old);
+
+        setupData();
+        setUpList();
+       // setUpOnclickListener();
+    }
+
+    private void setupData()
+    {
+        GollectCollection circle = new GollectCollection("2022 Hits", "Movies", "5");
+        collectionList.add(circle);
+        collectionList.add(circle);
+        collectionList.add(circle);
+        collectionList.add(circle);
+
+
+
+    }
+
+    private void setUpList()
+    {
+        listView = (ListView) findViewById(R.id.collectionList);
+
+        CollectionAdapter adapter = new CollectionAdapter(getApplicationContext(), 0, collectionList);
+        listView.setAdapter(adapter);
+    }
+
+    private void setUpOnclickListener()
+    {
+       /* listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l)
+            {
+                Collections selectCollection = (Collections) (listView.getItemAtPosition(position));
+                Intent showDetail = new Intent(getApplicationContext(), DetailActivity.class);
+                showDetail.putExtra("id",selectCollection.getId());
+                startActivity(showDetail);
+            }
+       }); */
+
     }
 }
