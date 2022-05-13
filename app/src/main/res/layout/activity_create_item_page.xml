@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/image_background"
     tools:context=".CreateItemPage">
 
     <Button
@@ -14,6 +15,8 @@
         android:layout_marginEnd="144dp"
         android:layout_marginBottom="48dp"
         android:text="Create Item"
+        android:textColor="@color/black"
+        android:background="@drawable/rounded_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -26,6 +29,8 @@
         android:layout_marginEnd="144dp"
         android:layout_marginBottom="116dp"
         android:text="Take Photo"
+        android:textColor="@color/black"
+        android:background="@drawable/rounded_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
@@ -46,7 +51,7 @@
             android:id="@+id/create_item_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="ItemDate" />
+            android:hint="Item Date" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -64,7 +69,7 @@
             android:id="@+id/create_item_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="ItemDescription" />
+            android:hint="Item Description" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -82,7 +87,7 @@
             android:id="@+id/create_item_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="ItemName" />
+            android:hint="Item Name" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -100,7 +105,7 @@
             android:id="@+id/create_item_type"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="ItemType" />
+            android:hint="Item Type" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView
