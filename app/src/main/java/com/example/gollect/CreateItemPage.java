@@ -107,7 +107,7 @@ public class CreateItemPage extends SelectedCollectionPage implements View.OnCli
         String iType = editTextItemType.getText().toString().trim();
         String iDescription = editTextItemDescription.getText().toString().trim();
         String iDate = editTextItemDate.getText().toString().trim();
-        ImageView iImage = imageView;
+        int iImage = 0;
 
         if(iName.isEmpty()){
             editTextItemName.setError("Collection name is required");
