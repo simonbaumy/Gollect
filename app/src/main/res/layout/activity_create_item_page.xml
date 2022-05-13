@@ -30,6 +30,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/create_item_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="ItemDate" />
@@ -47,6 +48,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/create_item_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="ItemDescription" />
@@ -64,6 +66,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/create_item_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="ItemName" />
@@ -81,6 +84,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/create_item_type"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="ItemType" />
