@@ -9,7 +9,7 @@ public class Item {
     public String id, itemName, itemType, itemDescription, itemDate;
     public int itemImage;
 
-    public Item(){
+    public Item(String name, String type, String description, String date, ImageView iImage){
 
     }
 
