@@ -83,7 +83,6 @@ public class CreateItemPage extends SelectedCollectionPage implements View.OnCli
 
         }
 
-
         takePhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -92,17 +91,14 @@ public class CreateItemPage extends SelectedCollectionPage implements View.OnCli
             }
         });
 
-
     }
-
-    static final int REQUEST_IMAGE_CAPTURE = 1;
 
     private void dispatchTakePictureIntent() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         try {
             startActivityForResult(takePictureIntent, 100);
         } catch (ActivityNotFoundException e) {
-            // display error state to the user
+
         }
     }
 
@@ -133,7 +129,6 @@ public class CreateItemPage extends SelectedCollectionPage implements View.OnCli
         String iDescription = editTextItemDescription.getText().toString().trim();
         String iDate = editTextItemDate.getText().toString().trim();
 
-
         if (iName.isEmpty()) {
             editTextItemName.setError("Collection name is required");
             editTextItemName.requestFocus();
@@ -154,23 +149,17 @@ public class CreateItemPage extends SelectedCollectionPage implements View.OnCli
             editTextItemDate.requestFocus();
             return;
         }
-
-
         String uniqueString = UUID.randomUUID().toString();
-
         try {
             saveImage(imageBitmap, uniqueString);
-            itemCreator(iType, iDescription, iDate, uniqueString);
+            itemCreator(iName, iType, iDescription, iDate, uniqueString);
             startActivity(new Intent(this, SelectedCollectionPage.class));
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
-
     }
 
-
+    //https://stackoverflow.com/questions/63776744/save-bitmap-image-to-specific-location-of-gallery-android-10
     private void saveImage(Bitmap bitmap, @NonNull String name) throws IOException {
         boolean saved;
         OutputStream fos;
@@ -197,7 +186,6 @@ public class CreateItemPage extends SelectedCollectionPage implements View.OnCli
             fos = new FileOutputStream(image);
 
         }
-
         saved = bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
         fos.flush();
         fos.close();

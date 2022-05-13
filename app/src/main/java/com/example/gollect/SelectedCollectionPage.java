@@ -47,8 +47,8 @@ public class SelectedCollectionPage extends AppCompatActivity implements View.On
       ;
     }
 
-    public void itemCreator(String type, String description, String date, String imageID){
-        Item newItem = new Item(type, description, date, imageID);
+    public void itemCreator(String name ,String type, String description, String date, String imageID){
+        Item newItem = new Item(name, type, description, date, imageID);
         itemList.add(newItem);
     }
     private void setUpList()

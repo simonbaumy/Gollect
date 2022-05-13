@@ -9,9 +9,9 @@ public class Item {
 
     public String id, itemName, itemType, itemDescription, itemDate, imageID;
 
-    public Item(String itemType, String itemDate, String itemDescription, String imageID){
+    public Item(String itemName, String itemType, String itemDate, String itemDescription, String imageID){
 
-       // this.itemName = itemName;
+        this.itemName = itemName;
         this.itemType = itemType;
         this.itemDescription = itemDescription;
         this.itemDate = itemDate;

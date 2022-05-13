@@ -28,16 +28,17 @@ public class ItemAdapter extends ArrayAdapter<Item> {
         {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_cell, parent, false);
         }
-       // TextView tv1 = (TextView) convertView.findViewById(R.id.item_name);
+        TextView tv1 = (TextView) convertView.findViewById(R.id.item_name);
         TextView tv2 = (TextView) convertView.findViewById(R.id.item_type);
         TextView tv3 = (TextView) convertView.findViewById(R.id.item_description);
         TextView tv4 = (TextView) convertView.findViewById(R.id.item_date);
-        ImageView iv = (ImageView) convertView.findViewById(R.id.item_image);
+       // ImageView iv = (ImageView) convertView.findViewById(R.id.item_image);
 
 
 
 
         //iv.setImageResource(item.getBitmap());
+        tv1.setText(item.getName());
         tv2.setText(item.getType());
         tv3.setText(item.getDescription());
         tv4.setText(item.getDate());
