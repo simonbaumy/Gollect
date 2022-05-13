@@ -2,12 +2,14 @@ package com.example.gollect;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class HomeOld extends AppCompatActivity {
+public class HomeOld extends AppCompatActivity implements View.OnClickListener{
 
 
     public static ArrayList<GollectCollection> collectionList = new ArrayList<GollectCollection>();
@@ -59,5 +61,14 @@ public class HomeOld extends AppCompatActivity {
             }
        }); */
 
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch(view.getId()) {
+            case R.id.addCollection:
+                startActivity(new Intent(HomeOld.this, CreateCollection.class));
+                break;
+        }
     }
 }

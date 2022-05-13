@@ -2,6 +2,7 @@ package com.example.gollect;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -37,6 +38,7 @@ public class CreateCollection extends HomeOld  implements View.OnClickListener{
         switch(view.getId()) {
             case R.id.CreateCollection:
                 CreateTheCollection();
+
                 break;
         }
         
@@ -65,6 +67,7 @@ public class CreateCollection extends HomeOld  implements View.OnClickListener{
         }
 
         CollectionCreator(cName, cGoal, cType);
+        startActivity(new Intent(CreateCollection.this, HomeOld.class));
 
     }
 }
