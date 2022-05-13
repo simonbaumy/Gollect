@@ -59,14 +59,23 @@ public class CreateCollection extends HomeOld implements View.OnClickListener{
             return;
         }
         if(cType.isEmpty()){
-            editTextCollectionName.setError("Collection type is required");
-            editTextCollectionName.requestFocus();
+            editTextCollectionType.setError("Collection type is required");
+            editTextCollectionType.requestFocus();
             return;
         }
         if(cGoal.isEmpty()){
-            editTextCollectionName.setError("Collection goal is required");
-            editTextCollectionName.requestFocus();
+            editTextCollectionGoal.setError("Collection goal is required");
+            editTextCollectionGoal.requestFocus();
             return;
+        }
+
+        try{
+            int number = Integer.parseInt(cGoal);
+        }
+        catch (NumberFormatException ex){
+            editTextCollectionGoal.setError("Not a Valid Goal Number. Please Input Integer");
+            editTextCollectionGoal.requestFocus();
+           return;
         }
 
         CollectionCreator(cName, cGoal, cType);
