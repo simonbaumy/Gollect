@@ -159,6 +159,7 @@ public class CreateItemPage extends SelectedCollectionPage implements View.OnCli
                 return;
             }
         }
+
         String uniqueString = UUID.randomUUID().toString();
 
 
