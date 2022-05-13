@@ -5,8 +5,8 @@
     android:layout_height="36dp"
     android:layout_gravity="center"
     android:orientation="horizontal"
-    app:layout_goneMarginStart="60dp"
-    app:layout_goneMarginTop="60dp">
+    app:layout_goneMarginStart="120dp"
+    app:layout_goneMarginTop="120dp">
 
     <TextView
         android:id="@+id/item_type"
