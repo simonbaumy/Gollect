@@ -3,17 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Simon/Downloads/Gollect/app/src/main/res/layout/activity_create_collection.xml" value="0.27760416666666665" />
-        <entry key="..\:/Users/Simon/Downloads/Gollect/app/src/main/res/layout/activity_create_item_page.xml" value="0.27760416666666665" />
+        <entry key="..\:/Users/Michael/AndroidStudioProjects/Gollect/app/src/main/res/drawable/rounded_button.xml" value="0.4175" />
+        <entry key="..\:/Users/Michael/AndroidStudioProjects/Gollect/app/src/main/res/drawable/white_rounded_button.xml" value="0.4175" />
+        <entry key="..\:/Users/Michael/AndroidStudioProjects/Gollect/app/src/main/res/layout/activity_home.xml" value="0.3078125" />
+        <entry key="..\:/Users/Michael/AndroidStudioProjects/Gollect/app/src/main/res/layout/activity_home_old.xml" value="0.3078125" />
+        <entry key="..\:/Users/Michael/AndroidStudioProjects/Gollect/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/Users/Michael/AndroidStudioProjects/Gollect/app/src/main/res/layout/app_bar_home.xml" value="0.3078125" />
         <entry key="..\:/Users/Simon/Downloads/Gollect/app/src/main/res/layout/activity_home.xml" value="0.2767210144927536" />
-        <entry key="..\:/Users/Simon/Downloads/Gollect/app/src/main/res/layout/activity_home_old.xml" value="0.18840579710144928" />
         <entry key="..\:/Users/Simon/Downloads/Gollect/app/src/main/res/layout/activity_main.xml" value="0.28125" />
         <entry key="..\:/Users/Simon/Downloads/Gollect/app/src/main/res/layout/activity_register.xml" value="0.28125" />
         <entry key="..\:/Users/Simon/Downloads/Gollect/app/src/main/res/layout/activity_selected_collection_page.xml" value="0.23020833333333332" />
         <entry key="..\:/Users/Simon/Downloads/Gollect/app/src/main/res/layout/activity_test.xml" value="0.30052083333333335" />
         <entry key="..\:/Users/Simon/Downloads/Gollect/app/src/main/res/layout/activity_view_item_page.xml" value="0.23020833333333332" />
         <entry key="..\:/Users/Simon/Downloads/Gollect/app/src/main/res/layout/app_bar_home.xml" value="0.23020833333333332" />
-        <entry key="..\:/Users/Simon/Downloads/Gollect/app/src/main/res/layout/collection_cell.xml" value="0.2994791666666667" />
         <entry key="..\:/Users/Simon/Downloads/Gollect/app/src/main/res/layout/content_home.xml" value="0.28489583333333335" />
         <entry key="..\:/Users/Simon/Downloads/Gollect/app/src/main/res/layout/fragment_favourites.xml" value="0.23020833333333332" />
         <entry key="..\:/Users/Simon/Downloads/Gollect/app/src/main/res/layout/fragment_gallery.xml" value="0.23020833333333332" />
