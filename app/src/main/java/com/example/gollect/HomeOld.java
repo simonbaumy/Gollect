@@ -33,14 +33,16 @@ public class HomeOld extends AppCompatActivity {
     {
         GollectCollection circle = new GollectCollection("2022 Hits", "Movies", "5");
         collectionList.add(circle);
-        collectionList.add(circle);
-        collectionList.add(circle);
-        collectionList.add(circle);
+
 
 
 
     }
 
+    public void CollectionCreator(String name, String goal, String type ){
+        GollectCollection theNewcollection = new GollectCollection(name, goal, type);
+        collectionList.add(theNewcollection);
+    }
     private void setUpList()
     {
         listView = (ListView) findViewById(R.id.collectionList);

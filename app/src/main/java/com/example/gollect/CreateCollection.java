@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class CreateCollection extends AppCompatActivity  implements View.OnClickListener{
+public class CreateCollection extends HomeOld  implements View.OnClickListener{
 
 
     private TextView CreateItem;
@@ -64,6 +64,7 @@ public class CreateCollection extends AppCompatActivity  implements View.OnClick
             return;
         }
 
+        CollectionCreator(cName, cGoal, cType);
 
     }
 }
