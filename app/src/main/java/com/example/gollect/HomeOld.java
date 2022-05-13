@@ -37,7 +37,8 @@ public class HomeOld extends AppCompatActivity implements View.OnClickListener{
     private void setupData()
     {
 
-        //saved data
+        GollectCollection theNewcollection = new GollectCollection("Test", "Test2", "Test3");
+        collectionList.add(theNewcollection);
 
     }
 
