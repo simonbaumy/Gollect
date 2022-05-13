@@ -114,7 +114,7 @@ public class CreateItemPage extends SelectedCollectionPage implements View.OnCli
         String iType = editTextItemType.getText().toString().trim();
         String iDescription = editTextItemDescription.getText().toString().trim();
         String iDate = editTextItemDate.getText().toString().trim();
-        Bitmap iBitmap = imageBitmap;
+
 
 
         if(iName.isEmpty()){
@@ -146,7 +146,7 @@ public class CreateItemPage extends SelectedCollectionPage implements View.OnCli
 
     }
 
-    private void saveToGallery(String imageID){
+    private void saveToGallery(String ImageID){
         BitmapDrawable bitmapDrawable = (BitmapDrawable) imageView.getDrawable();
         Bitmap bitmap = bitmapDrawable.getBitmap();
 
@@ -155,7 +155,7 @@ public class CreateItemPage extends SelectedCollectionPage implements View.OnCli
         File dir = new File(file.getAbsolutePath() + "/MyPics");
         dir.mkdirs();
 
-        String filename = imageID;
+        String filename = String.format("%d.png",System.currentTimeMillis());
         File outFile = new File(dir,filename);
         try{
             outputStream = new FileOutputStream(outFile);
