@@ -26,7 +26,7 @@ public class CreateItemPage extends SelectedCollectionPage implements View.OnCli
         editTextItemDescription = (EditText) findViewById(R.id.create_item_description);
         editTextItemDate = (EditText) findViewById(R.id.create_item_date);
 
-        createItem = (Button) findViewById(R.id.CreateCollection);
+        createItem = (Button) findViewById(R.id.createItem);
         createItem.setOnClickListener(this);
 
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
@@ -35,7 +35,7 @@ public class CreateItemPage extends SelectedCollectionPage implements View.OnCli
     @Override
     public void onClick(View view) {
         switch(view.getId()) {
-            case R.id.CreateCollection:
+            case R.id.createItem:
                 CreateTheItem();
 
                 break;

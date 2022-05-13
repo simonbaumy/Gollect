@@ -5,14 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 
 import java.util.ArrayList;
 
 import java.util.Collection;
 
-public class SelectedCollectionPage extends AppCompatActivity {
+public class SelectedCollectionPage extends AppCompatActivity implements View.OnClickListener {
 
     Collection selectedCollection;
 
@@ -20,6 +23,7 @@ public class SelectedCollectionPage extends AppCompatActivity {
 
     private ListView listView;
 
+    private TextView addItemButton;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -31,6 +35,9 @@ public class SelectedCollectionPage extends AppCompatActivity {
         setUpList();
        // setUpOnclickListener();
 
+
+        addItemButton = (Button) findViewById(R.id.addItemBtn);
+        addItemButton.setOnClickListener(this);
     }
 
     private void setupData() {
@@ -69,4 +76,12 @@ public class SelectedCollectionPage extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onClick(View view) {
+        switch(view.getId()) {
+            case R.id.addItemBtn:
+                startActivity(new Intent(this, CreateItemPage.class));
+                break;
+        }
+    }
 }
