@@ -1,4 +1,4 @@
-package com.example.gollect.ui;
+package com.example.gollect;
 
 import android.content.Context;
 import android.view.LayoutInflater;
