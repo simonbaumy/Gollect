@@ -11,6 +11,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
@@ -21,6 +22,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import java.util.UUID;
+
 public class CreateItemPage extends SelectedCollectionPage implements View.OnClickListener {
 
     private TextView createItem;
@@ -28,6 +31,7 @@ public class CreateItemPage extends SelectedCollectionPage implements View.OnCli
     private ProgressBar progressBar;
     private ImageView imageView;
     private Button takePhoto;
+    private Bitmap imageBitmap;
 
 
     @Override
@@ -85,8 +89,10 @@ public class CreateItemPage extends SelectedCollectionPage implements View.OnCli
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 100 && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
-            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            imageBitmap = (Bitmap) extras.get("data");
             imageView.setImageBitmap(imageBitmap);
+
+
 
         }
     }
@@ -107,7 +113,8 @@ public class CreateItemPage extends SelectedCollectionPage implements View.OnCli
         String iType = editTextItemType.getText().toString().trim();
         String iDescription = editTextItemDescription.getText().toString().trim();
         String iDate = editTextItemDate.getText().toString().trim();
-        int iImage = 0;
+        Bitmap iBitmap = imageBitmap;
+
 
         if(iName.isEmpty()){
             editTextItemName.setError("Collection name is required");
@@ -130,7 +137,10 @@ public class CreateItemPage extends SelectedCollectionPage implements View.OnCli
             return;
         }
 
-        itemCreator(iName, iType, iDescription, iDate, iImage);
+
+        String uniqueString = UUID.randomUUID().toString();
+
+        itemCreator(iType, iDescription, iDate, uniqueString);
         startActivity(new Intent(this, SelectedCollectionPage.class));
 
     }
