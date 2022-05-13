@@ -24,7 +24,7 @@ public class ItemAdapter extends ArrayAdapter<Item> {
 
         if(convertView == null)
         {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.collection_cell, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_cell, parent, false);
         }
         TextView tv1 = (TextView) convertView.findViewById(R.id.item_name);
         TextView tv2 = (TextView) convertView.findViewById(R.id.item_type);

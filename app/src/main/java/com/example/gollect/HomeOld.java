@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -27,7 +28,7 @@ public class HomeOld extends AppCompatActivity implements View.OnClickListener{
 
         setupData();
         setUpList();
-       // setUpOnclickListener();
+        setUpOnclickListener();
 
         addCollectionButton = (Button) findViewById(R.id.addCollection);
         addCollectionButton.setOnClickListener(this);
@@ -54,16 +55,16 @@ public class HomeOld extends AppCompatActivity implements View.OnClickListener{
 
     private void setUpOnclickListener()
     {
-       /* listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l)
             {
-                Collections selectCollection = (Collections) (listView.getItemAtPosition(position));
-                Intent showDetail = new Intent(getApplicationContext(), DetailActivity.class);
-                showDetail.putExtra("id",selectCollection.getId());
-                startActivity(showDetail);
+                GollectCollection selectCollection = ( GollectCollection) (listView.getItemAtPosition(position));
+                Intent showCollection = new Intent(getApplicationContext(), SelectedCollectionPage.class);
+                showCollection.putExtra("id",selectCollection.getId());
+                startActivity(showCollection);
             }
-       }); */
+       });
 
     }
 

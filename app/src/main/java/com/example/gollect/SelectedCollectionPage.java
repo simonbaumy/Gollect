@@ -25,10 +25,35 @@ public class SelectedCollectionPage extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selected_collection_page);
-        getSelectedShape();
-        setValues();
+       // getSelectedShape();
+        //setValues();
+        setupData();
+        setUpList();
+       // setUpOnclickListener();
 
     }
+
+    private void setupData() {
+
+       Item theitem = new Item("Hello1", "Hello2", "Hello3", "Hello4");
+        itemList.add(theitem);
+    }
+
+    public void itemCreator(String name, String type, String description , String date ){
+        Item newItem = new Item(name, type, description, date);
+        itemList.add(newItem);
+    }
+    private void setUpList()
+    {
+        listView = (ListView) findViewById(R.id.itemList);
+
+        ItemAdapter adapter = new ItemAdapter(getApplicationContext(), 0, itemList);
+        listView.setAdapter(adapter);
+    }
+
+
+
+
 
     private void getSelectedShape()
     {
@@ -37,13 +62,6 @@ public class SelectedCollectionPage extends AppCompatActivity {
 
     }
 
-    private void setUpList()
-    {
-        listView = (ListView) findViewById(R.id.collectionList);
-
-        ItemAdapter adapter = new  ItemAdapter(getApplicationContext(), 0,  itemList);
-        listView.setAdapter(adapter);
-    }
 
     private void setValues()
     {
