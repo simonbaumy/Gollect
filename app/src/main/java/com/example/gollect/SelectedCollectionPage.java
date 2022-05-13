@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -42,12 +43,11 @@ public class SelectedCollectionPage extends AppCompatActivity implements View.On
 
     private void setupData() {
 
-       Item theitem = new Item("Hello1", "Hello2", "Hello3", "Hello4");
-        itemList.add(theitem);
+      ;
     }
 
-    public void itemCreator(String name, String type, String description , String date ){
-        Item newItem = new Item(name, type, description, date);
+    public void itemCreator(String name, String type, String description, String date, ImageView iImage){
+        Item newItem = new Item(name, type, description, date, iImage);
         itemList.add(newItem);
     }
     private void setUpList()

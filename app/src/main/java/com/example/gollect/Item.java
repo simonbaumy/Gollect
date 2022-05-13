@@ -1,21 +1,25 @@
 package com.example.gollect;
 
+import android.media.Image;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 
 public class Item {
 
     public String id, itemName, itemType, itemDescription, itemDate;
+    public int itemImage;
 
     public Item(){
 
     }
 
-    public Item(String itemName,String itemType, String itemDate, String itemDescription){
+    public Item(String itemName,String itemType, String itemDate, String itemDescription, int itemImage){
 
         this.itemName = itemName;
         this.itemType = itemType;
         this.itemDescription = itemDescription;
         this.itemDate = itemDate;
+        this.itemImage = itemImage;
     }
 
 
@@ -56,5 +60,13 @@ public class Item {
 
     public void setDate(String name) {
         this.itemDate = name;
+    }
+
+    public int getImage() {
+        return itemImage;
+    }
+
+    public void setImage(int image) {
+        this.itemImage = image;
     }
 }

@@ -107,6 +107,7 @@ public class CreateItemPage extends SelectedCollectionPage implements View.OnCli
         String iType = editTextItemType.getText().toString().trim();
         String iDescription = editTextItemDescription.getText().toString().trim();
         String iDate = editTextItemDate.getText().toString().trim();
+        ImageView iImage = imageView;
 
         if(iName.isEmpty()){
             editTextItemName.setError("Collection name is required");
@@ -129,7 +130,7 @@ public class CreateItemPage extends SelectedCollectionPage implements View.OnCli
             return;
         }
 
-        itemCreator(iName, iType, iDescription, iDate);
+        itemCreator(iName, iType, iDescription, iDate, iImage);
         startActivity(new Intent(this, SelectedCollectionPage.class));
 
     }

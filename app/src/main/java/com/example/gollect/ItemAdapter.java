@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -30,6 +31,8 @@ public class ItemAdapter extends ArrayAdapter<Item> {
         TextView tv2 = (TextView) convertView.findViewById(R.id.item_type);
         TextView tv3 = (TextView) convertView.findViewById(R.id.item_description);
         TextView tv4 = (TextView) convertView.findViewById(R.id.item_date);
+        ImageView iv =  (ImageView) convertView.findViewById(R.id.itemPhoto);;
+
 
 
 
@@ -37,6 +40,8 @@ public class ItemAdapter extends ArrayAdapter<Item> {
         tv2.setText(item.getType());
         tv3.setText(item.getDescription());
         tv4.setText(item.getDate());
+        iv.setImageResource(item.getImage());
+
 
 
         return convertView;
