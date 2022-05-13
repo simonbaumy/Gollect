@@ -23,9 +23,9 @@ public class CreateCollection extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_collection);
 
-        editTextCollectionName = (EditText) findViewById(R.id.register_username);
-        editTextCollectionType = (EditText) findViewById(R.id.register_email);
-        EditTextCollectionGoal = (EditText) findViewById(R.id.register_password);
+        editTextCollectionName = (EditText) findViewById(R.id.CreateCollectionName);
+        editTextCollectionType = (EditText) findViewById(R.id.CreateCollectionType);
+        EditTextCollectionGoal = (EditText) findViewById(R.id.CreateCollectionGoal);
 
 
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
