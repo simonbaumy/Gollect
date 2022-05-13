@@ -40,6 +40,9 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -66,6 +69,8 @@ public class CreateItemPage extends SelectedCollectionPage implements View.OnCli
         imageView = (ImageView) findViewById(R.id.itemPhoto);
 
         mContext = getApplicationContext();
+
+        imageBitmap = null;
 
         createItem = (Button) findViewById(R.id.createItem);
         createItem.setOnClickListener(this);
@@ -130,35 +135,76 @@ public class CreateItemPage extends SelectedCollectionPage implements View.OnCli
         String iDate = editTextItemDate.getText().toString().trim();
 
         if (iName.isEmpty()) {
-            editTextItemName.setError("Collection name is required");
+            editTextItemName.setError("Item name is required");
             editTextItemName.requestFocus();
             return;
         }
         if (iType.isEmpty()) {
-            editTextItemType.setError("Collection type is required");
+            editTextItemType.setError("Item type is required");
             editTextItemType.requestFocus();
             return;
         }
         if (iDescription.isEmpty()) {
-            editTextItemDescription.setError("Collection goal is required");
+            editTextItemDescription.setError("Item Description is required");
             editTextItemDescription.requestFocus();
             return;
         }
         if (iDate.isEmpty()) {
-            editTextItemDate.setError("Collection goal is required");
+            iDate = "Unknown";
+              }
+        else{
+            if(validateJavaDate(iDate) == false){
+                editTextItemDate.setError("Invalid Date Format. Please Use yyyy/MM/dd");
+                editTextItemDate.requestFocus();
+                return;
+            }
+        }
+        String uniqueString = UUID.randomUUID().toString();
+
+
+        if (imageBitmap == null) {
+            editTextItemDate.setError("Please Take a Picture");
             editTextItemDate.requestFocus();
             return;
         }
-        String uniqueString = UUID.randomUUID().toString();
+
         try {
             saveImage(imageBitmap, uniqueString);
-            itemCreator(iName, iType, iDescription, iDate, uniqueString);
-            startActivity(new Intent(this, SelectedCollectionPage.class));
+
         } catch (IOException e) {
             e.printStackTrace();
         }
+        itemCreator(iName, iType, iDescription, iDate, uniqueString);
+        startActivity(new Intent(this, SelectedCollectionPage.class));
     }
 
+    public static boolean validateJavaDate(String strDate) {
+        /* Check if date is 'null' */
+        if (strDate.trim().equals("")) {
+            return true;
+        }
+        /* Date is not 'null' */
+        else {
+            /*
+             * Set preferred date format,
+             * For example MM-dd-yyyy, MM.dd.yyyy,dd.MM.yyyy etc.*/
+            SimpleDateFormat sdfrmt = new SimpleDateFormat("yyyy/MM/dd");
+            sdfrmt.setLenient(false);
+            /* Create Date object
+             * parse the string into date
+             */
+            try {
+                Date javaDate = sdfrmt.parse(strDate);
+                System.out.println(strDate + " is valid date format");
+            }
+            /* Date format is invalid */ catch (ParseException e) {
+                System.out.println(strDate + " is Invalid Date format");
+                return false;
+            }
+            /* Return true if date format is valid */
+            return true;
+        }
+    }
     //https://stackoverflow.com/questions/63776744/save-bitmap-image-to-specific-location-of-gallery-android-10
     private void saveImage(Bitmap bitmap, @NonNull String name) throws IOException {
         boolean saved;

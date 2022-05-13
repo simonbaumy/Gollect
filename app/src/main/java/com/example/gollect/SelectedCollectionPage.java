@@ -31,7 +31,7 @@ public class SelectedCollectionPage extends AppCompatActivity implements View.On
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selected_collection_page);
-       // getSelectedShape();
+
         //setValues();
         setupData();
         setUpList();
@@ -44,7 +44,7 @@ public class SelectedCollectionPage extends AppCompatActivity implements View.On
 
     private void setupData() {
 
-      ;
+
     }
 
     public void itemCreator(String name ,String type, String description, String date, String imageID){
@@ -63,7 +63,7 @@ public class SelectedCollectionPage extends AppCompatActivity implements View.On
 
 
 
-    private void getSelectedShape()
+    private void getSelectedCollectionID()
     {
         Intent previousIntent = getIntent();
         String parsedStringID = previousIntent.getStringExtra("id");
