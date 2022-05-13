@@ -3,11 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Michael/AndroidStudioProjects/Gollect/app/src/main/res/layout/activity_home.xml" value="0.3078125" />
-        <entry key="..\:/Users/Michael/AndroidStudioProjects/Gollect/app/src/main/res/layout/activity_home_old.xml" value="0.3078125" />
-        <entry key="..\:/Users/Michael/AndroidStudioProjects/Gollect/app/src/main/res/layout/activity_main.xml" value="0.3078125" />
-        <entry key="..\:/Users/Michael/AndroidStudioProjects/Gollect/app/src/main/res/layout/app_bar_home.xml" value="0.3078125" />
+        <entry key="..\:/Users/Simon/Downloads/Gollect/app/src/main/res/layout/activity_create_collection.xml" value="0.27760416666666665" />
+        <entry key="..\:/Users/Simon/Downloads/Gollect/app/src/main/res/layout/activity_create_item_page.xml" value="0.27760416666666665" />
         <entry key="..\:/Users/Simon/Downloads/Gollect/app/src/main/res/layout/activity_home.xml" value="0.2767210144927536" />
+        <entry key="..\:/Users/Simon/Downloads/Gollect/app/src/main/res/layout/activity_home_old.xml" value="0.18840579710144928" />
         <entry key="..\:/Users/Simon/Downloads/Gollect/app/src/main/res/layout/activity_main.xml" value="0.28125" />
         <entry key="..\:/Users/Simon/Downloads/Gollect/app/src/main/res/layout/activity_register.xml" value="0.28125" />
         <entry key="..\:/Users/Simon/Downloads/Gollect/app/src/main/res/layout/activity_selected_collection_page.xml" value="0.23020833333333332" />
