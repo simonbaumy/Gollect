@@ -50,16 +50,16 @@ public class Settings extends AppCompatActivity {
                 if(isChecked){
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                     themeText.setText(("Dark Mode"));
-                    //reset();
+                    Reset();
                 }else{
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                     themeText.setText(("Light Mode"));
-                    //reset();
+                    Reset();
                 }
             }
 
-            private void reset() {
-                Intent intent = new Intent(getApplicationContext(), Settings.class);
+            private void Reset() {
+                Intent intent = new Intent(getApplicationContext(), HomeOld.class);
                 startActivity(intent);
                 finish();
             }

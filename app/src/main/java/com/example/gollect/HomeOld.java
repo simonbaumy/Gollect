@@ -23,10 +23,6 @@ public class HomeOld extends AppCompatActivity implements View.OnClickListener{
     private ListView listView;
 
     private TextView addCollectionButton;
-
-    private Switch themeSwitch;
-    private TextView themeText;
-
     private Button settingsButton;
 
     @Override

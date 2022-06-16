@@ -7,6 +7,8 @@
         <item name="bgc">#FFFFFF</item>
         <item name="tC">#000000</item>
         <item name="btnC">#FCC394</item>
+        <item name="bckImg">@drawable/ic_background</item>
+        <item name="modeString">Light Mode</item>
 
     </style>
 
@@ -17,6 +19,8 @@
         <item name="bgc">#000000</item>
         <item name="tC">#FFFFFF</item>
         <item name="btnC">#FFD98F</item>
+        <item name="bckImg">@drawable/ic_dark_background</item>
+        <item name="modeString">Dark Mode</item>
     </style>
 
 
