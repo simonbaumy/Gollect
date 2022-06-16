@@ -1,13 +1,16 @@
 package com.example.gollect;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ListView;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -21,10 +24,48 @@ public class HomeOld extends AppCompatActivity implements View.OnClickListener{
 
     private TextView addCollectionButton;
 
+    private Switch themeSwitch;
+    private TextView themeText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+            setTheme((R.style.DarkTheme));
+        }else {
+            setTheme((R.style.Theme_Gollect));
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_old);
+
+        themeSwitch = findViewById(R.id.themeSwitchMode);
+        themeText = findViewById(R.id.themeTextView);
+
+        if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+            themeSwitch.setChecked(true);
+        }
+
+        themeSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+
+                if(isChecked){
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    themeText.setText(("Dark Mode"));
+                    reset();
+                }else{
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    themeText.setText(("Light Mode"));
+                    reset();
+                }
+            }
+
+            private void reset() {
+                Intent intent = new Intent(getApplicationContext(), HomeOld.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         setupData();
         setUpList();
