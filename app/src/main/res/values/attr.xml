@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="dt">
+        <attr name="bgc" format="color"/>
+        <attr name="tC" format="color"/>
+        <attr name="btnC" format="color"/>
+        <attr name="bckImg" format="reference"/>
+        <attr name="modeString" format="string"/>
+    </declare-styleable>
+</resources>

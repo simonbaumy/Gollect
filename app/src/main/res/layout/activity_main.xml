@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/image_background"
+    android:background="?attr/bckImg"
     tools:context=".MainActivity">
 
     <EditText
@@ -23,6 +23,7 @@
         android:minHeight="48dp"
         android:textAlignment="center"
         android:textColorHint="#757575"
+        android:text="rich@gmail.com"
         app:flow_horizontalAlign="center"
         app:flow_verticalAlign="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,7 +38,7 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="101dp"
         android:height="48dp"
-
+        android:text="123456"
         android:ems="10"
         android:gravity="center"
         android:hint="@string/password"

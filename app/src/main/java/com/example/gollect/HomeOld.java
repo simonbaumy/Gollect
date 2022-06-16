@@ -21,6 +21,8 @@ public class HomeOld extends AppCompatActivity implements View.OnClickListener{
 
     private TextView addCollectionButton;
 
+    private Button settingsButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,12 +34,14 @@ public class HomeOld extends AppCompatActivity implements View.OnClickListener{
 
         addCollectionButton = (Button) findViewById(R.id.addCollection);
         addCollectionButton.setOnClickListener(this);
+
+        settingsButton = (Button) findViewById(R.id.settingsBtn);
     }
 
     private void setupData()
     {
 
-      //  GollectCollection theNewcollection = new GollectCollection("Test", "Test2", "Test3");
+        //  GollectCollection theNewcollection = new GollectCollection("Test", "Test2", "Test3");
         //collectionList.add(theNewcollection);
 
     }
@@ -65,7 +69,7 @@ public class HomeOld extends AppCompatActivity implements View.OnClickListener{
                 showCollection.putExtra("id",selectCollection.getId());
                 startActivity(showCollection);
             }
-       });
+        });
 
     }
 

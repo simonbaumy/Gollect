@@ -3,11 +3,44 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/layout/activity_create_collection.xml" value="0.5172101449275363" />
-        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/layout/activity_home_old.xml" value="0.5172101449275363" />
-        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/layout/activity_main.xml" value="0.26545086119554206" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.4705" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/drawable/ic_background.xml" value="0.33" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.4705" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.4705" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/drawable/ic_baseline_info_24.xml" value="0.4705" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.4705" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/drawable/ic_baseline_star_24.xml" value="0.4705" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/drawable/ic_baseline_trash_24.xml" value="0.4705" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/drawable/ic_dark_background.xml" value="0.3115" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/drawable/ic_launcher_background.xml" value="0.4705" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/drawable/ic_logo.xml" value="0.4705" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/drawable/ic_menu_camera.xml" value="0.4705" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.4705" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/drawable/rounded_button.xml" value="0.4705" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/layout/activity_create_collection.xml" value="0.33" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/layout/activity_create_item_page.xml" value="0.5494791666666666" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/layout/activity_home.xml" value="0.5494791666666666" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/layout/activity_home_old.xml" value="0.33" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/layout/activity_register.xml" value="0.5172101449275363" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/layout/activity_selected_collection_page.xml" value="0.30833333333333335" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/layout/activity_settings.xml" value="0.25" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/layout/activity_test.xml" value="0.30833333333333335" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/layout/activity_view_item_page.xml" value="0.5458333333333333" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/layout/app_bar_home.xml" value="0.30833333333333335" />
         <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/layout/collection_cell.xml" value="0.5172101449275363" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/layout/content_home.xml" value="0.30833333333333335" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/layout/fragment_favourites.xml" value="0.30833333333333335" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/layout/fragment_gallery.xml" value="0.30833333333333335" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/layout/fragment_home.xml" value="0.30833333333333335" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/layout/fragment_profile.xml" value="0.30833333333333335" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/layout/fragment_recyclebin.xml" value="0.30833333333333335" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/layout/fragment_settings.xml" value="0.30833333333333335" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/layout/fragment_slideshow.xml" value="0.30833333333333335" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/layout/item_cell.xml" value="0.30833333333333335" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/layout/nav_header_home.xml" value="0.30833333333333335" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/mipmap-anydpi-v26/ic_dark_background.xml" value="0.311" />
+        <entry key="..\:/Downloads/Gollect-master (1)/Gollect/app/src/main/res/mipmap-anydpi-v26/ic_dark_background_round.xml" value="0.311" />
       </map>
     </option>
   </component>
