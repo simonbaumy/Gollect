@@ -1,5 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+<resources>
     <style name="Theme.Gollect" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">#FCC394</item>
         <item name="colorPrimaryVariant">@color/white</item>

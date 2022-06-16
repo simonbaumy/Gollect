@@ -1,22 +1,18 @@
 package com.example.gollect;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
-import android.widget.Switch;
-import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.SwitchCompat;
 
 public class Settings extends AppCompatActivity {
 
-    private Switch themeSwitch;
-    private TextView themeText;
+    public SwitchCompat themeSwitch;
 
-    private Button returnHomeButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -29,16 +25,10 @@ public class Settings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        themeSwitch = findViewById(R.id.themeSwitch);
-        themeText = findViewById(R.id.themeTextView2);
+        themeSwitch = findViewById(R.id.themeSwitchMode);
 
-        returnHomeButton = (Button) findViewById(R.id.returnHomeBtn);
-        returnHomeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                returnHome();
-            }
-        });
+        Button returnHomeButton = (Button) findViewById(R.id.returnHomeBtn);
+        returnHomeButton.setOnClickListener(view -> returnHome());
 
         if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
             themeSwitch.setChecked(true);
@@ -49,17 +39,15 @@ public class Settings extends AppCompatActivity {
 
                 if(isChecked){
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                    themeText.setText(("Dark Mode"));
                     Reset();
                 }else{
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                    themeText.setText(("Light Mode"));
                     Reset();
                 }
             }
 
-            private void Reset() {
-                Intent intent = new Intent(getApplicationContext(), HomeOld.class);
+            public void Reset() {
+                Intent intent = new Intent(getApplicationContext(), Settings.class);
                 startActivity(intent);
                 finish();
             }

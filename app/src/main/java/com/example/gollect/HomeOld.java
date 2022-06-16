@@ -1,16 +1,13 @@
 package com.example.gollect;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.ListView;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -23,41 +20,28 @@ public class HomeOld extends AppCompatActivity implements View.OnClickListener{
     private ListView listView;
 
     private TextView addCollectionButton;
+
     private Button settingsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_old);
-
-
 
         setupData();
         setUpList();
         setUpOnclickListener();
 
-        settingsButton = findViewById(R.id.settingsBtn);
         addCollectionButton = (Button) findViewById(R.id.addCollection);
         addCollectionButton.setOnClickListener(this);
 
-        settingsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                settingsActivity();
-            }
-        });
-    }
-
-    public void settingsActivity(){
-        Intent intent = new Intent(this, Settings.class);
-        startActivity(intent);
+        settingsButton = (Button) findViewById(R.id.settingsBtn);
     }
 
     private void setupData()
     {
 
-      //  GollectCollection theNewcollection = new GollectCollection("Test", "Test2", "Test3");
+        //  GollectCollection theNewcollection = new GollectCollection("Test", "Test2", "Test3");
         //collectionList.add(theNewcollection);
 
     }
@@ -85,7 +69,7 @@ public class HomeOld extends AppCompatActivity implements View.OnClickListener{
                 showCollection.putExtra("id",selectCollection.getId());
                 startActivity(showCollection);
             }
-       });
+        });
 
     }
 
