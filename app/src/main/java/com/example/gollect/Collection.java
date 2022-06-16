@@ -11,7 +11,6 @@ public class Collection {
     public String name;
     public String type;
     public int goal;
-    public int starCount = 0;
     public Map<String, Boolean> stars = new HashMap<>();
 
     public Collection() {
@@ -29,11 +28,9 @@ public class Collection {
     public Map<String, Object> toMap() {
         HashMap<String, Object> result = new HashMap<>();
         result.put("uid", uid);
-        result.put("author", name);
-        result.put("title", type);
-        result.put("body", goal);
-        result.put("starCount", starCount);
-        result.put("stars", stars);
+        result.put("name", name);
+        result.put("type", type);
+        result.put("goal", goal);
 
         return result;
     }

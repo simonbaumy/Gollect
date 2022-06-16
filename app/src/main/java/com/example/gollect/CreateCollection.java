@@ -19,6 +19,10 @@ public class CreateCollection extends HomeOld implements View.OnClickListener{
     private EditText editTextCollectionName, editTextCollectionType, editTextCollectionGoal;
     private ProgressBar progressBar;
 
+    private FirebaseAuth mAuth;
+
+
+
 
 
     @Override
@@ -34,6 +38,11 @@ public class CreateCollection extends HomeOld implements View.OnClickListener{
         createCollection.setOnClickListener(this);
 
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
+
+
+
+
+
     }
 
     @Override
@@ -77,6 +86,12 @@ public class CreateCollection extends HomeOld implements View.OnClickListener{
             editTextCollectionGoal.requestFocus();
            return;
         }
+
+        ReadAndWriteSnippets c = new ReadAndWriteSnippets();
+
+        mAuth = FirebaseAuth.getInstance();
+        c.writeNewCollection(mAuth.getUid(),cName, cType,  Integer.parseInt(cGoal));
+
 
         CollectionCreator(cName, cGoal, cType);
         startActivity(new Intent(this, HomeOld.class));

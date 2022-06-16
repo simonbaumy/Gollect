@@ -27,7 +27,7 @@ public class ReadAndWriteSnippets {
     private DatabaseReference mDatabase;
     // [END declare_database_ref]
 
-    public ReadAndWriteSnippets(DatabaseReference database) {
+    public ReadAndWriteSnippets() { //DatabaseReference database
         // [START initialize_database_ref]
         mDatabase = FirebaseDatabase.getInstance().getReference();
         // [END initialize_database_ref]
@@ -85,15 +85,15 @@ public class ReadAndWriteSnippets {
     }
 
     // [START write_fan_out]
-    private void writeNewCollection(String userId, String name, String type, int goal) {
+    public void writeNewCollection(String userId, String name, String type, int goal) {
         // Create new post at /user-posts/$userid/$postid and at
         // /posts/$postid simultaneously
-        String key = mDatabase.child("posts").push().getKey();
+        String key = mDatabase.child("collections").push().getKey();
         Collection collection = new Collection(userId, name, type, goal);
         Map<String, Object> collectionValues = collection.toMap();
 
         Map<String, Object> childUpdates = new HashMap<>();
-        childUpdates.put("/collections/" + key, collectionValues);
+       // childUpdates.put("/collections/" + key, collectionValues);
         childUpdates.put("/user-collections/" + userId + "/" + key, collectionValues);
 
         mDatabase.updateChildren(childUpdates);

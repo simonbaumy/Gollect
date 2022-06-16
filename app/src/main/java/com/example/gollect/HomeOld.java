@@ -10,6 +10,10 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 
 public class HomeOld extends AppCompatActivity implements View.OnClickListener{
@@ -22,6 +26,11 @@ public class HomeOld extends AppCompatActivity implements View.OnClickListener{
     private TextView addCollectionButton;
 
     private Button settingsButton;
+
+    private DatabaseReference mDatabase;
+    private FirebaseAuth mAuth;
+// ...
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +49,21 @@ public class HomeOld extends AppCompatActivity implements View.OnClickListener{
 
     private void setupData()
     {
-
+        mAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("/user-collections/" + mAuth.getUid());;
         //  GollectCollection theNewcollection = new GollectCollection("Test", "Test2", "Test3");
         //collectionList.add(theNewcollection);
 
     }
+
+
+        // [END basic_query_value_listener]
+
+
+
+
+
+
 
     public void CollectionCreator(String name, String goal, String type ){
         GollectCollection theNewcollection = new GollectCollection(name, goal, type);
