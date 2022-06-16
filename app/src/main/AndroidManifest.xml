@@ -9,6 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Gollect">
         <activity
+            android:name=".Settings"
+            android:exported="false" />
+        <activity
             android:name=".HomeOld"
             android:exported="false" />
         <activity

@@ -27,52 +27,35 @@ public class HomeOld extends AppCompatActivity implements View.OnClickListener{
     private Switch themeSwitch;
     private TextView themeText;
 
+    private Button settingsButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
-            setTheme((R.style.DarkTheme));
-        }else {
-            setTheme((R.style.Theme_Gollect));
-        }
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_old);
 
-        themeSwitch = findViewById(R.id.themeSwitchMode);
-        themeText = findViewById(R.id.themeTextView);
 
-        if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
-            themeSwitch.setChecked(true);
-        }
-
-        themeSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-
-                if(isChecked){
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                    themeText.setText(("Dark Mode"));
-                    reset();
-                }else{
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                    themeText.setText(("Light Mode"));
-                    reset();
-                }
-            }
-
-            private void reset() {
-                Intent intent = new Intent(getApplicationContext(), HomeOld.class);
-                startActivity(intent);
-                finish();
-            }
-        });
 
         setupData();
         setUpList();
         setUpOnclickListener();
 
+        settingsButton = findViewById(R.id.settingsBtn);
         addCollectionButton = (Button) findViewById(R.id.addCollection);
         addCollectionButton.setOnClickListener(this);
+
+        settingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                settingsActivity();
+            }
+        });
+    }
+
+    public void settingsActivity(){
+        Intent intent = new Intent(this, Settings.class);
+        startActivity(intent);
     }
 
     private void setupData()

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/bgc"
+    tools:context=".ViewItemPage">
+
+    <Button
+        android:id="@+id/returnHomeBtn"
+        android:layout_width="170dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginEnd="144dp"
+        android:layout_marginBottom="48dp"
+        android:text="GO BACK"
+        android:textColor="#000000"
+        android:background="@drawable/rounded_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Switch
+        android:id="@+id/themeSwitch"
+        android:layout_width="54dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="181dp"
+        android:layout_marginEnd="181dp"
+        android:layout_marginBottom="337dp"
+        app:layout_constraintBottom_toTopOf="@+id/returnHomeBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/themeTextView2"
+        android:layout_width="239dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="131dp"
+        android:layout_marginBottom="8dp"
+        android:text="Dark Mode"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="327dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="51dp"
+        android:text="Dark Mode is an extension that helps you quickly turn the screen to dark. In addition, you can alter between the two themes to suit your liking, if you like Light Mode, don't be embarresed!"
+        app:layout_constraintBottom_toTopOf="@+id/themeSwitch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/themeTextView2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
