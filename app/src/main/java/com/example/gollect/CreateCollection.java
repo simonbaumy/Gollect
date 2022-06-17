@@ -90,10 +90,8 @@ public class CreateCollection extends HomeOld implements View.OnClickListener{
         ReadAndWriteSnippets c = new ReadAndWriteSnippets();
 
         mAuth = FirebaseAuth.getInstance();
-        c.writeNewCollection(mAuth.getUid(),cName, cType,  Integer.parseInt(cGoal));
+        c.writeNewCollection(cName, cType,  cGoal);
 
-
-        CollectionCreator(cName, cGoal, cType);
         startActivity(new Intent(this, HomeOld.class));
 
     }

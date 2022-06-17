@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,6 +22,7 @@ import java.util.Map;
 
 public class ReadAndWriteSnippets {
 
+    private FirebaseAuth mAuth;
     private static final String TAG = "ReadAndWriteSnippets";
 
     // [START declare_database_ref]
@@ -63,7 +65,7 @@ public class ReadAndWriteSnippets {
         // [END rtdb_write_new_user_task]
     }
 
-    private void addCollectionEventListener(DatabaseReference mCollectionReference) {
+    public void addCollectionEventListener(DatabaseReference mCollectionReference) {
         // [START collection_value_event_listener]
         ValueEventListener collectionListener = new ValueEventListener() {
             @Override
@@ -85,16 +87,22 @@ public class ReadAndWriteSnippets {
     }
 
     // [START write_fan_out]
-    public void writeNewCollection(String userId, String name, String type, int goal) {
+    public void writeNewCollection(String name, String type, String goal) {
         // Create new post at /user-posts/$userid/$postid and at
+
+        mAuth = FirebaseAuth.getInstance();
+
+
+
         // /posts/$postid simultaneously
         String key = mDatabase.child("collections").push().getKey();
-        Collection collection = new Collection(userId, name, type, goal);
+        Collection collection = new Collection(name, type, goal);
+        collection.SetKey(key);
         Map<String, Object> collectionValues = collection.toMap();
-
         Map<String, Object> childUpdates = new HashMap<>();
        // childUpdates.put("/collections/" + key, collectionValues);
-        childUpdates.put("/user-collections/" + userId + "/" + key, collectionValues);
+        childUpdates.put("/user-collections/" +  mAuth.getUid() + "/" + key, collectionValues);
+
 
         mDatabase.updateChildren(childUpdates);
     }

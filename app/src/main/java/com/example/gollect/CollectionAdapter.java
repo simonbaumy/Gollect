@@ -11,11 +11,11 @@ import java.util.List;
 
 
 
-public class CollectionAdapter extends ArrayAdapter<GollectCollection> {
+public class CollectionAdapter extends ArrayAdapter<Collection> {
 
 
 
-    public CollectionAdapter(Context context, int resource, List<GollectCollection> collectionList)
+    public CollectionAdapter(Context context, int resource, List<Collection> collectionList)
     {
         super(context,resource,collectionList);
     }
@@ -24,7 +24,7 @@ public class CollectionAdapter extends ArrayAdapter<GollectCollection> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent)
     {
-        GollectCollection collection = getItem(position);
+        Collection collection = getItem(position);
 
         if(convertView == null)
         {
