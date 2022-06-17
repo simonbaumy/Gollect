@@ -1,5 +1,7 @@
 package com.example.gollect;
 
+import androidx.appcompat.app.AppCompatDelegate;
+
 import com.google.firebase.database.Exclude;
 
 import java.util.HashMap;
@@ -13,6 +15,8 @@ public class Collection {
     public String goal;
     public String id;
     public Map<String, Boolean> stars = new HashMap<>();
+
+    boolean getMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
 
     public Collection() {
         // Default constructor required for calls to DataSnapshot.getValue(Post.class)

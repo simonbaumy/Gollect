@@ -5,10 +5,12 @@ import android.media.Image;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AppCompatDelegate;
+
 public class Item {
 
     public String id, itemName, itemType, itemDescription, itemDate, imageID;
-
+    boolean getMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
     public Item(String itemName, String itemType, String itemDate, String itemDescription, String imageID){
 
         this.itemName = itemName;

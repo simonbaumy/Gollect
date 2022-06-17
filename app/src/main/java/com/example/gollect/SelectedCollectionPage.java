@@ -1,6 +1,7 @@
 package com.example.gollect;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -20,7 +21,7 @@ import java.util.Collection;
 public class SelectedCollectionPage extends AppCompatActivity implements View.OnClickListener {
 
     Collection selectedCollection;
-
+    boolean getMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
     public static ArrayList<Item> itemList = new ArrayList<Item>();
 
     private ListView listView;
@@ -29,6 +30,12 @@ public class SelectedCollectionPage extends AppCompatActivity implements View.On
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        if (getMode) {
+            setTheme(R.style.DarkTheme);
+        } else {
+            setTheme(R.style.Theme_Gollect);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selected_collection_page);
 

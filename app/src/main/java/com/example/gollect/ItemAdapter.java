@@ -9,6 +9,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatDelegate;
+
 import java.util.List;
 
 public class ItemAdapter extends ArrayAdapter<Item> {
@@ -18,7 +20,7 @@ public class ItemAdapter extends ArrayAdapter<Item> {
         super(context,resource,collectionList);
     }
 
-
+    boolean getMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
     @Override
     public View getView(int position, View convertView, ViewGroup parent)
     {

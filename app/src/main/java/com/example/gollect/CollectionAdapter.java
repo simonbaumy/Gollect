@@ -7,13 +7,15 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatDelegate;
+
 import java.util.List;
 
 
 
 public class CollectionAdapter extends ArrayAdapter<Collection> {
 
-
+    boolean getMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
 
     public CollectionAdapter(Context context, int resource, List<Collection> collectionList)
     {

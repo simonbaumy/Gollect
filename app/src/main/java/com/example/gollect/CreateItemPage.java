@@ -4,6 +4,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -56,9 +57,15 @@ public class CreateItemPage extends SelectedCollectionPage implements View.OnCli
     private Bitmap imageBitmap;
     private Context mContext;
 
-
+    boolean getMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (getMode) {
+            setTheme(R.style.DarkTheme);
+        } else {
+            setTheme(R.style.Theme_Gollect);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_item_page);
 

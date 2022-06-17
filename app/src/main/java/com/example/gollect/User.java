@@ -1,7 +1,9 @@
 package com.example.gollect;
 
-public class User {
+import androidx.appcompat.app.AppCompatDelegate;
 
+public class User {
+    boolean getMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
     public String username;
     public String email;
 

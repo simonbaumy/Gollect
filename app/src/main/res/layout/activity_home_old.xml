@@ -8,24 +8,23 @@
     tools:context=".HomeOld">
 
     <Button
-        android:id="@+id/settingsBtn"
-        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:id="@+id/settingsButton"
+
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="6dp"
-        android:layout_weight="1"
         android:background="@drawable/rounded_button"
-        android:contentDescription="@string/menu_settings"
-        android:text="@string/menu_settings"
-        android:textSize="8sp"
-        app:icon="@drawable/ic_baseline_settings_24"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="⚙"
+        android:textAlignment="center"
+        android:textColor="?attr/tC"
+        android:textSize="22dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"

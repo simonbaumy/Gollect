@@ -3,6 +3,7 @@ package com.example.gollect;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -24,7 +25,7 @@ public class ReadAndWriteSnippets {
 
     private FirebaseAuth mAuth;
     private static final String TAG = "ReadAndWriteSnippets";
-
+    boolean getMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
     // [START declare_database_ref]
     private DatabaseReference mDatabase;
     // [END declare_database_ref]

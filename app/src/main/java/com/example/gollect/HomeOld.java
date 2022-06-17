@@ -3,6 +3,7 @@ package com.example.gollect;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -41,12 +42,19 @@ public class HomeOld extends AppCompatActivity implements View.OnClickListener{
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
 // ...
-
+boolean getMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (getMode) {
+            setTheme(R.style.DarkTheme);
+        } else {
+            setTheme(R.style.Theme_Gollect);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_old);
+
         mAuth = FirebaseAuth.getInstance();
         listView = (ListView) findViewById(R.id.collectionList);
         CollectionAdapter adapter = new CollectionAdapter(getApplicationContext(), 0, collectionList);
@@ -86,7 +94,8 @@ public class HomeOld extends AppCompatActivity implements View.OnClickListener{
         addCollectionButton = (Button) findViewById(R.id.addCollection);
         addCollectionButton.setOnClickListener(this);
 
-        settingsButton = (Button) findViewById(R.id.settingsBtn);
+        settingsButton = (Button) findViewById(R.id.settingsButton);
+        settingsButton.setOnClickListener(this);
     }
 
 
@@ -122,7 +131,9 @@ public class HomeOld extends AppCompatActivity implements View.OnClickListener{
             case R.id.addCollection:
                 startActivity(new Intent(this, CreateCollection.class));
                 break;
-
+            case R.id.settingsButton:
+                startActivity(new Intent(this, Settings.class));
+                break;
 
         }
     }

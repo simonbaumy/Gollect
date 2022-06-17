@@ -2,6 +2,7 @@ package com.example.gollect;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,12 +25,19 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     private TextView registerUser;
     private EditText editTextUsername, editTextEmail, editTextPassword, editTextPasswordConfirm;
     private ProgressBar progressBar;
-
+    boolean getMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
     private FirebaseAuth mAuth;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        if (getMode) {
+            setTheme(R.style.DarkTheme);
+        } else {
+            setTheme(R.style.Theme_Gollect);
+        }
+
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_register);

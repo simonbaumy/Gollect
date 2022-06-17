@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -27,12 +28,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private Button buttonSignin;
 
-    private FirebaseAuth mAuth;
+    public Settings settings;
 
+    private FirebaseAuth mAuth;
+    boolean getMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
     private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (getMode) {
+            setTheme(R.style.DarkTheme);
+        } else {
+            setTheme(R.style.Theme_Gollect);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
