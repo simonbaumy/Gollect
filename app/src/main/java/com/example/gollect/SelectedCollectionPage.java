@@ -1,5 +1,6 @@
 package com.example.gollect;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
@@ -7,6 +8,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -14,19 +16,30 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 
-import java.util.ArrayList;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-import java.util.Collection;
+import java.util.ArrayList;
 
 public class SelectedCollectionPage extends AppCompatActivity implements View.OnClickListener {
 
-    Collection selectedCollection;
     boolean getMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
-    public static ArrayList<Item> itemList = new ArrayList<Item>();
 
     private ListView listView;
 
     private TextView addItemButton;
+    private FirebaseAuth mAuth;
+
+    private static final String TAG = "SelectedCollectionPage";
+
+    public ArrayList<Item> itemList = new ArrayList<>();
+
+    private DatabaseReference mDatabase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -39,9 +52,50 @@ public class SelectedCollectionPage extends AppCompatActivity implements View.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selected_collection_page);
 
-        //setValues();
-        setupData();
-        setUpList();
+
+
+        Intent intent = getIntent();
+
+        String key = intent.getStringExtra("key");
+
+        Log.d(TAG, "this is the key: " +key );
+
+        listView = (ListView) findViewById(R.id.itemList);
+        ItemAdapter adapter = new ItemAdapter(getApplicationContext(), 0, itemList);
+        listView.setAdapter(adapter);
+
+
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+//        Log.d(TAG, ref.child(key).child(key).toString());
+        mAuth = FirebaseAuth.getInstance();
+        DatabaseReference userItems = ref.child("user-collections").child(mAuth.getUid()).child(key).child(key);
+        userItems.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapShot) {
+                itemList.clear();
+                for (DataSnapshot itemSnapshot : dataSnapShot.getChildren()){
+                   //Log.d(TAG, itemSnapshot.child("itemName").getValue(String.class));
+                    String cName =  itemSnapshot.child("itemName").getValue(String.class);
+                    String cType =  itemSnapshot.child("itemType").getValue(String.class);
+                    String cDate =  itemSnapshot.child("itemDate").getValue(String.class);
+                    String cDescription =  itemSnapshot.child("itemDescription").getValue(String.class);
+                    com.example.gollect.Item item = new com.example.gollect.Item(""+cName, ""+cType, ""+cDate, ""+cDescription);
+                   // Log.d(TAG, item.itemName);
+                    itemList.add(item);
+
+                    adapter.notifyDataSetChanged();
+
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
        // setUpOnclickListener();
 
 
@@ -49,24 +103,11 @@ public class SelectedCollectionPage extends AppCompatActivity implements View.On
         addItemButton.setOnClickListener(this);
     }
 
-    private void setupData() {
 
-
-    }
-
-    public void itemCreator(String name ,String type, String description, String date, String imageID){
-        Item newItem = new Item(name, type, description, date, imageID);
-        itemList.add(newItem);
-    }
-    private void setUpList()
-    {
-        listView = (ListView) findViewById(R.id.itemList);
-
-        ItemAdapter adapter = new ItemAdapter(getApplicationContext(), 0, itemList);
-        listView.setAdapter(adapter);
-    }
-
-
+    //public void itemCreator(String name ,String type, String description, String date, String imageID){
+    //    Item newItem = new Item(name, type, description, date);
+     //   itemList.add(newItem);
+   // }
 
 
 
@@ -77,18 +118,19 @@ public class SelectedCollectionPage extends AppCompatActivity implements View.On
 
     }
 
-
-    private void setValues()
-    {
-
-    }
-
-
     @Override
     public void onClick(View view) {
         switch(view.getId()) {
             case R.id.addItemBtn:
-                startActivity(new Intent(this, CreateItemPage.class));
+
+                Intent intent = getIntent();
+                String cKey = intent.getStringExtra("key");
+
+                Intent showItem = new Intent(getApplicationContext(), CreateItemPage.class);
+                showItem.putExtra("key",cKey);
+                startActivity(showItem);
+
+               // startActivity(new Intent(this, CreateItemPage.class));
                 break;
         }
     }

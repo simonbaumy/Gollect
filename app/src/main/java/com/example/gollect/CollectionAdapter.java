@@ -15,6 +15,8 @@ import java.util.List;
 
 public class CollectionAdapter extends ArrayAdapter<Collection> {
 
+    public String cKey;
+
     boolean getMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
 
     public CollectionAdapter(Context context, int resource, List<Collection> collectionList)
@@ -37,7 +39,7 @@ public class CollectionAdapter extends ArrayAdapter<Collection> {
         TextView tv3 = (TextView) convertView.findViewById(R.id.collectionType);
 
 
-
+        cKey = collection.getKey();
         tv1.setText(collection.getName());
         tv2.setText(collection.getGoal());
         tv3.setText(collection.getType());

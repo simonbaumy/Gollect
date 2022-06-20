@@ -62,22 +62,22 @@ boolean getMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.M
 
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-        DatabaseReference userCollections = ref.child("user-collections").child("g7ZbjcYGN9cmqgqhGTZquz41ioO2");
+        DatabaseReference userCollections = ref.child("user-collections").child(mAuth.getUid());
         userCollections.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapShot) {
                 collectionList.clear();
                 for (DataSnapshot collectionSnapshot : dataSnapShot.getChildren()){
-                    Log.d(TAG, collectionSnapshot.child("name").getValue(String.class));
+
                      String cName =  collectionSnapshot.child("name").getValue(String.class);
-                     String cType =  collectionSnapshot.child("name").getValue(String.class);
-                     String cGoal =  collectionSnapshot.child("name").getValue(String.class);
-                      Collection collection = new Collection(""+cName, ""+cType, ""+cGoal);
-                    Log.d(TAG, collection.name);
+                     String cType =  collectionSnapshot.child("type").getValue(String.class);
+                     String cGoal =  collectionSnapshot.child("goal").getValue(String.class);
+                    String cKey =  collectionSnapshot.child("key").getValue(String.class);
+                      Collection collection = new Collection(""+cName, ""+cType, ""+cGoal,""+cKey);
+
                     collectionList.add(collection);
 
                     adapter.notifyDataSetChanged();
-
 
                 }
             }
@@ -88,7 +88,6 @@ boolean getMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.M
             }
         });
 
-        setUpList();
         setUpOnclickListener();
 
         addCollectionButton = (Button) findViewById(R.id.addCollection);
@@ -99,23 +98,17 @@ boolean getMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.M
     }
 
 
-    private void setUpList()
-    {
-
-
-
-
-    }
-
     private void setUpOnclickListener()
     {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l)
             {
-                Collection selectCollection = ( Collection) (listView.getItemAtPosition(position));
+
+
+                Collection selectCollection = (Collection) (listView.getItemAtPosition(position));
                 Intent showCollection = new Intent(getApplicationContext(), SelectedCollectionPage.class);
-                showCollection.putExtra("id",selectCollection.getId());
+                showCollection.putExtra("key",selectCollection.getKey());
                 startActivity(showCollection);
             }
 

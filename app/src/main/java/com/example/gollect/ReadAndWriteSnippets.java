@@ -94,15 +94,37 @@ public class ReadAndWriteSnippets {
         mAuth = FirebaseAuth.getInstance();
 
 
-
         // /posts/$postid simultaneously
         String key = mDatabase.child("collections").push().getKey();
-        Collection collection = new Collection(name, type, goal);
+        Collection collection = new Collection(name, type, goal, key);
         collection.SetKey(key);
+        collection.key = key;
         Map<String, Object> collectionValues = collection.toMap();
         Map<String, Object> childUpdates = new HashMap<>();
        // childUpdates.put("/collections/" + key, collectionValues);
         childUpdates.put("/user-collections/" +  mAuth.getUid() + "/" + key, collectionValues);
+
+
+        mDatabase.updateChildren(childUpdates);
+    }
+    // [END write_fan_out]
+
+
+    public void writeNewItem(String name, String type, String date, String description, String cKey) {
+        // Create new post at /user-posts/$userid/$postid and at
+
+        mAuth = FirebaseAuth.getInstance();
+
+
+
+        // /posts/$postid simultaneously
+        String iKey = mDatabase.child("collections").push().getKey();
+        Item item = new   Item (name, type, date, description);
+        item.SetKey(iKey);
+        Map<String, Object> itemValues = item.toMap();
+        Map<String, Object> childUpdates = new HashMap<>();
+        // childUpdates.put("/collections/" + key, collectionValues);
+        childUpdates.put("/user-collections/" +  mAuth.getUid() + "/" + cKey + "/" + cKey +"/" + iKey , itemValues);
 
 
         mDatabase.updateChildren(childUpdates);

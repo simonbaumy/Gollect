@@ -51,7 +51,8 @@
             android:id="@+id/create_item_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Item Date" />
+            android:hint="Item Date"
+            android:text="2022/01/01" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -69,7 +70,8 @@
             android:id="@+id/create_item_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Item Description" />
+            android:hint="Item Description"
+            android:text="Desc" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -87,7 +89,8 @@
             android:id="@+id/create_item_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Item Name" />
+            android:hint="Item Name"
+            android:text="Name" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -105,7 +108,8 @@
             android:id="@+id/create_item_type"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Item Type" />
+            android:hint="Item Type"
+            android:text="Type" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView

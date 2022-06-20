@@ -36,6 +36,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -56,6 +58,9 @@ public class CreateItemPage extends SelectedCollectionPage implements View.OnCli
     private Button takePhoto;
     private Bitmap imageBitmap;
     private Context mContext;
+    private FirebaseAuth mAuth;
+
+    private static final String TAG = "CreateItemPage";
 
     boolean getMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
     @Override
@@ -68,6 +73,9 @@ public class CreateItemPage extends SelectedCollectionPage implements View.OnCli
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_item_page);
+
+
+
 
         editTextItemName = (EditText) findViewById(R.id.create_item_name);
         editTextItemType = (EditText) findViewById(R.id.create_item_type);
@@ -182,8 +190,18 @@ public class CreateItemPage extends SelectedCollectionPage implements View.OnCli
         } catch (IOException e) {
             e.printStackTrace();
         }
-        itemCreator(iName, iType, iDescription, iDate, uniqueString);
-        startActivity(new Intent(this, SelectedCollectionPage.class));
+
+        Intent intent = getIntent();
+        String iKey = intent.getStringExtra("key");
+
+        ReadAndWriteSnippets c = new ReadAndWriteSnippets();
+
+        mAuth = FirebaseAuth.getInstance();
+        c.writeNewItem(iName, iType,  iDate, iDescription, iKey);
+
+        Intent showCollection = new Intent(getApplicationContext(), SelectedCollectionPage.class);
+        showCollection.putExtra("key",iKey);
+        startActivity(showCollection);
     }
 
     public static boolean validateJavaDate(String strDate) {

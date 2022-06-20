@@ -7,19 +7,41 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatDelegate;
 
+import com.google.firebase.database.Exclude;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class Item {
 
     public String id, itemName, itemType, itemDescription, itemDate, imageID;
+    public String key;
     boolean getMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
-    public Item(String itemName, String itemType, String itemDate, String itemDescription, String imageID){
+    public Item(String itemName, String itemType, String itemDate, String itemDescription){
 
         this.itemName = itemName;
         this.itemType = itemType;
         this.itemDescription = itemDescription;
         this.itemDate = itemDate;
-        this.imageID = imageID;
+        this.imageID = "";
+        this.key = "";
+
     }
 
+    @Exclude
+    public Map<String, Object> toMap() {
+        HashMap<String, Object> result = new HashMap<>();
+        result.put("itemName", itemName);
+        result.put("itemType", itemType);
+        result.put("itemDate", itemDate);
+        result.put("itemDescription", itemDate);
+
+        return result;
+    }
+
+    public void SetKey(String key){
+        this.key = key;
+    }
 
     public String getId() {
         return id;

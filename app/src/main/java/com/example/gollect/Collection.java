@@ -22,11 +22,11 @@ public class Collection {
         // Default constructor required for calls to DataSnapshot.getValue(Post.class)
     }
 
-    public Collection(String name, String type, String goal) {
+    public Collection(String name, String type, String goal, String key) {
         this.name = name;
         this.type = type;
         this.goal = goal;
-        this.key ="";
+        this.key = key;
     }
 
     @Exclude
@@ -35,12 +35,17 @@ public class Collection {
         result.put("name", name);
         result.put("type", type);
         result.put("goal", goal);
+        result.put("key", key);
 
         return result;
     }
 
     public void SetKey(String key){
         this.key = key;
+    }
+
+    public String getKey(){
+        return key;
     }
 
     public String getId() {
