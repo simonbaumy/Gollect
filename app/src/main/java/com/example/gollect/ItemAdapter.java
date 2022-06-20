@@ -6,14 +6,27 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatDelegate;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class ItemAdapter extends ArrayAdapter<Item> {
+
+
+
 
     public ItemAdapter(Context context, int resource, List<Item> collectionList)
     {
@@ -35,7 +48,6 @@ public class ItemAdapter extends ArrayAdapter<Item> {
         TextView tv3 = (TextView) convertView.findViewById(R.id.item_description);
         TextView tv4 = (TextView) convertView.findViewById(R.id.item_date);
        // ImageView iv = (ImageView) convertView.findViewById(R.id.item_image);
-
 
 
 

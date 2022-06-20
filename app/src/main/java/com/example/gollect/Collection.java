@@ -14,6 +14,7 @@ public class Collection {
     public String key;
     public String goal;
     public String id;
+    public String currentGoal;
     public Map<String, Boolean> stars = new HashMap<>();
 
     boolean getMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
@@ -78,6 +79,14 @@ public class Collection {
 
     public void setGoal(String name) {
         this.goal = name;
+    }
+
+    public void setCurrentGoal(String currentGoal) {
+        this.currentGoal = currentGoal;
+    }
+
+    public String getCurrentGoal() {
+        return currentGoal;
     }
 
 
