@@ -58,15 +58,12 @@ public class SelectedCollectionPage extends AppCompatActivity implements View.On
 
         String key = intent.getStringExtra("key");
 
-        Log.d(TAG, "this is the key: " +key );
-
         listView = (ListView) findViewById(R.id.itemList);
         ItemAdapter adapter = new ItemAdapter(getApplicationContext(), 0, itemList);
         listView.setAdapter(adapter);
 
-
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-//        Log.d(TAG, ref.child(key).child(key).toString());
+
         mAuth = FirebaseAuth.getInstance();
         DatabaseReference userItems = ref.child("user-collections").child(mAuth.getUid()).child(key).child(key);
         userItems.addValueEventListener(new ValueEventListener() {
