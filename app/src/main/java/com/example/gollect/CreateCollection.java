@@ -1,6 +1,5 @@
 package com.example.gollect;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
@@ -17,9 +16,9 @@ public class CreateCollection extends HomeOld implements View.OnClickListener{
 
 
     private TextView createCollection;
+    private Button returnToMenu;
     private EditText editTextCollectionName, editTextCollectionType, editTextCollectionGoal;
     private ProgressBar progressBar;
-
     private FirebaseAuth mAuth;
 
     boolean getMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
@@ -45,6 +44,9 @@ public class CreateCollection extends HomeOld implements View.OnClickListener{
         createCollection = (Button) findViewById(R.id.CreateCollection);
         createCollection.setOnClickListener(this);
 
+        returnToMenu = (Button) findViewById(R.id.ReturnMenu);
+        returnToMenu.setOnClickListener(this);
+
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
 
 
@@ -58,10 +60,19 @@ public class CreateCollection extends HomeOld implements View.OnClickListener{
         switch(view.getId()) {
             case R.id.CreateCollection:
                 CreateTheCollection();
+            case R.id.ReturnMenu:
 
+                ReturnToMenu();
                 break;
         }
         
+    }
+
+    private void ReturnToMenu(){
+        editTextCollectionName.setText("");
+        editTextCollectionType.setText("");
+        editTextCollectionGoal.setText("");
+        startActivity(new Intent(this, HomeOld.class));
     }
 
     private void CreateTheCollection() {
