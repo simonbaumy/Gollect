@@ -10,6 +10,7 @@ import android.os.Bundle;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,6 +38,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.internal.Util;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public class Graph extends AppCompatActivity {
@@ -50,15 +52,16 @@ public class Graph extends AppCompatActivity {
     public ArrayList<Item> itemList = new ArrayList<>();
     private static final String TAG = "Graph";
 
+    private  int COUNT = 0;
 
-    private static final int MAX_X_VALUE = 7;
-    private static final int MAX_Y_VALUE = 50;
-    private static final int MIN_Y_VALUE = 5;
-    private static final String SET_LABEL = "App Downloads";
-    private static final String[] DAYS = { "SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT" };
 
+    private static final String SET_LABEL = "Item Types";
+    private  String[] TYPES = new String [256];
+    private  int[] TYPESNUMBER = new int [256];
+    boolean found = false;
     private BarChart chart;
 
+    private  int RealCount = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -73,22 +76,7 @@ public class Graph extends AppCompatActivity {
 
         Intent intent = getIntent();
         String key = intent.getStringExtra("key");
-
-
-        //listView = (ListView) findViewById(R.id.itemList);
-        //ItemAdapter adapter = new ItemAdapter(getApplicationContext(), 0, itemList);
-//        listView.setAdapter(adapter);
-
-
-
-
-
-
-
-
-
-
-
+        
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
 
@@ -99,11 +87,40 @@ public class Graph extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapShot) {
                 itemList.clear();
                 for (DataSnapshot itemSnapshot : dataSnapShot.getChildren()) {
-                    //Log.d(TAG, itemSnapshot.child("itemName").getValue(String.class));
+
 
                     String cType = itemSnapshot.child("itemType").getValue(String.class);
 
 
+
+                    if(TYPES != null){
+
+
+                    for(String x : TYPES){
+                        if(x != null)
+                        {
+                            if(x.equals(cType) ){
+                                found = true;
+                                break;
+                            }
+                        }
+
+                    }
+                    if(found){
+                        TYPESNUMBER[Arrays.asList(TYPES).indexOf(cType)] += 1;
+
+                     //   Log.d(TAG, cType + " Has  " +     TYPESNUMBER[Arrays.asList(TYPES).indexOf(cType)] );
+                    }
+                  else{
+                      RealCount +=1;
+                      TYPES[COUNT] = cType;
+                      TYPESNUMBER[COUNT] += 1;
+                     //   Log.d(TAG, cType + " FOUND AT COUNT " +   COUNT);
+                    }
+                    }
+                  COUNT++;
+
+                    Log.d(TAG, "COUNT: " +  COUNT);
                     String cName = itemSnapshot.child("itemName").getValue(String.class);
 
                     String cDate = itemSnapshot.child("itemDate").getValue(String.class);
@@ -140,26 +157,33 @@ public class Graph extends AppCompatActivity {
 
 
     }
-
+    public boolean Contains(String[] array, String value) {
+        for (String c : array)
+            if (c == value)
+                return true;
+        return false;
+    }
 
     private void configureChartAppearance() {
         chart.getDescription().setEnabled(false);
+        chart.setDrawGridBackground(false);
 
         XAxis xAxis = chart.getXAxis();
         xAxis.setValueFormatter(new ValueFormatter() {
             @Override
             public String getFormattedValue(float value) {
-                return DAYS[(int) value];
+                return TYPES[(int) value];
             }
         });
     }
 
     private BarData createChartData() {
         ArrayList<BarEntry> values = new ArrayList<>();
-        for (int i = 0; i < MAX_X_VALUE; i++) {
+        for (int i = 0; i < RealCount; i++) {
             float x = i;
+
             Random random  = new Random();
-            float y =  random.nextInt(MAX_Y_VALUE - MIN_Y_VALUE) + MIN_Y_VALUE;
+            float y =  (TYPESNUMBER[i]);
             values.add(new BarEntry(x, y));
         }
         BarDataSet set1 = new BarDataSet(values, SET_LABEL);
