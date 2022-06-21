@@ -9,10 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Gollect">
         <activity
-            android:name=".Options"
-            android:exported="false" />
-        <activity
-            android:name=".graph"
+            android:name=".Graph"
             android:exported="false" />
         <activity
             android:name=".Settings"
