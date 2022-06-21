@@ -79,6 +79,17 @@ public class Graph extends AppCompatActivity {
         //ItemAdapter adapter = new ItemAdapter(getApplicationContext(), 0, itemList);
 //        listView.setAdapter(adapter);
 
+
+
+
+
+
+
+
+
+
+
+
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
 
         mAuth = FirebaseAuth.getInstance();
@@ -105,6 +116,20 @@ public class Graph extends AppCompatActivity {
 
 
                 }
+
+
+
+
+                chart = findViewById(R.id.fragment_horizontalbarchart_chart);
+
+                BarData data = createChartData();
+                configureChartAppearance();
+                prepareChartData(data);
+
+
+
+
+
             }
 
             @Override
@@ -116,18 +141,6 @@ public class Graph extends AppCompatActivity {
 
     }
 
-    @Nullable
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_graph, container, false);
-
-        chart = view.findViewById(R.id.fragment_horizontalbarchart_chart);
-
-        BarData data = createChartData();
-        configureChartAppearance();
-        prepareChartData(data);
-
-        return view;
-    }
 
     private void configureChartAppearance() {
         chart.getDescription().setEnabled(false);
