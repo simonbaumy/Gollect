@@ -80,6 +80,15 @@ public class Graph extends AppCompatActivity {
         userItems.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapShot) {
+
+                totalCount = 0;
+                found = false;
+                RealCount = 0;
+                TYPESNUMBER = new int [256];
+                TYPES = new String [256];
+                TYPES[0] = "";
+
+
                 for (DataSnapshot itemSnapshot : dataSnapShot.getChildren()) {
 
                     String cType = itemSnapshot.child("itemType").getValue(String.class);
@@ -94,7 +103,7 @@ public class Graph extends AppCompatActivity {
                         }
 
                     }
-                    if(found){
+                    if(found && (Arrays.asList(TYPES).indexOf(cType) > -1)){
                         TYPESNUMBER[Arrays.asList(TYPES).indexOf(cType)] += 1;
                         totalCount ++;
                     }
