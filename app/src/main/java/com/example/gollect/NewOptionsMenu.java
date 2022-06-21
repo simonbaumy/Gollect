@@ -8,14 +8,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Options extends AppCompatActivity {
+public class NewOptionsMenu extends AppCompatActivity {
 
-    public Button returnToHomeFromOptionsBtn;
+    public Button backButton;
 
     boolean getMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         if (getMode) {
             setTheme(R.style.DarkTheme);
         } else {
@@ -23,15 +24,19 @@ public class Options extends AppCompatActivity {
         }
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_options);
+        setContentView(R.layout.activity_new_options_menu);
 
-        returnToHomeFromOptionsBtn = (Button) findViewById(R.id.optionsReturnButton);
-        returnToHomeFromOptionsBtn.setOnClickListener(new View.OnClickListener() {
+        backButton = (Button) findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), HomeOld.class);
-                startActivity(intent);
+                backToMenu();
             }
         });
+    }
+
+    public void backToMenu(){
+        Intent intent = new Intent(getApplicationContext(), HomeOld.class);
+        startActivity(intent);
     }
 }

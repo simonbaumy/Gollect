@@ -1,31 +1,25 @@
 package com.example.gollect;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 public class HomeOld extends AppCompatActivity implements View.OnClickListener{
 
@@ -38,7 +32,7 @@ public class HomeOld extends AppCompatActivity implements View.OnClickListener{
     private TextView addCollectionButton;
 
     private Button settingsButton;
-    private Button opttionsButton;
+    public Button optionsButton1;
 
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
@@ -97,8 +91,8 @@ boolean getMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.M
         settingsButton = (Button) findViewById(R.id.settingsButton);
         settingsButton.setOnClickListener(this);
 
-        opttionsButton = (Button) findViewById(R.id.optionBtn);
-        opttionsButton.setOnClickListener(this);
+        optionsButton1 = (Button) findViewById(R.id.openOptionsBtn);
+        optionsButton1.setOnClickListener(this);
     }
 
 
@@ -108,16 +102,11 @@ boolean getMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.M
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l)
             {
-
-
                 Collection selectCollection = (Collection) (listView.getItemAtPosition(position));
                 Intent showCollection = new Intent(getApplicationContext(), SelectedCollectionPage.class);
                 showCollection.putExtra("key",selectCollection.getKey());
                 startActivity(showCollection);
             }
-
-
-
         });
 
     }
@@ -131,14 +120,8 @@ boolean getMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.M
             case R.id.settingsButton:
                 startActivity(new Intent(this, Settings.class));
                 break;
-            case  R.id.optionBtn:
-                startActivity(new Intent(this, Options.class));
-                break;
-
+            case  R.id.openOptionsBtn:
+                startActivity(new Intent(this, NewOptionsMenu.class));
         }
     }
-
-
-
-
 }

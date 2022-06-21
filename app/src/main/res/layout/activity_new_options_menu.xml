@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/bckImg"
+    tools:context=".NewOptionsMenu">
+
+    <Switch
+        android:id="@+id/switch5"
+        android:layout_width="91dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:checked="true"
+        android:gravity="center|center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView24"
+        app:layout_constraintTop_toBottomOf="@+id/themeTextView3"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <Switch
+        android:id="@+id/switch6"
+        android:layout_width="91dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center|center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView19"
+        app:layout_constraintTop_toBottomOf="@+id/switch7"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <TextView
+        android:id="@+id/themeTextView3"
+        android:layout_width="335dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="34dp"
+        android:text="Accessibility"
+        android:textColor="?attr/tC"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="238dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:filterTouchesWhenObscured="true"
+        android:gravity="center|left"
+        android:text="Online Visibility"
+        android:textColor="?attr/tC"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView27"
+        tools:ignore="RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="238dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center|left"
+        android:text="Language"
+        android:textColor="?attr/tC"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/themeTextView5"
+        tools:ignore="RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="94dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="30dp"
+        android:gravity="center"
+        android:text="English"
+        android:textColor="?attr/tC"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView21"
+        app:layout_constraintTop_toBottomOf="@+id/themeTextView5" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="94dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="28dp"
+        android:gravity="center"
+        android:text="Default"
+        android:textColor="?attr/tC"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView23"
+        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="238dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center|left"
+        android:text="UI Scaling"
+        android:textColor="?attr/tC"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView21"
+        tools:ignore="RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="351dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="36dp"
+        android:gravity="center"
+        android:text="Gollect is a simple, multi-faceted, fast and responsive collection application using Google Firebase. Application subject to change."
+        android:textAlignment="viewStart"
+        android:textColor="?attr/tC"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView26"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="238dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center|left"
+        android:text="Cloud Storage Backup"
+        android:textColor="?attr/tC"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/themeTextView3"
+        tools:ignore="RtlHardcoded" />
+
+    <Switch
+        android:id="@+id/switch7"
+        android:layout_width="91dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="16dp"
+        android:checked="true"
+        android:gravity="center|center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView27"
+        app:layout_constraintTop_toBottomOf="@+id/switch8"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="238dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center|left"
+        android:text="Debugging Mode"
+        android:textColor="?attr/tC"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView24"
+        tools:ignore="RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/themeTextView5"
+        android:layout_width="335dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="36dp"
+        android:text="Options"
+        android:textColor="?attr/tC"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch6" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="335dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="38dp"
+        android:gravity="center"
+        android:text="Gollect V0.0.25 - 21/06/2022"
+        android:textColor="?attr/tC"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backButton" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="238dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center|left"
+        android:text="Share analytics"
+        android:textColor="?attr/tC"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView25"
+        tools:ignore="RtlHardcoded" />
+
+    <Switch
+        android:id="@+id/switch8"
+        android:layout_width="91dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="16dp"
+        android:checked="true"
+        android:gravity="center|center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView25"
+        app:layout_constraintTop_toBottomOf="@+id/switch5"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="162dp"
+        android:layout_marginBottom="22dp"
+        android:background="@drawable/rounded_button"
+        android:text="BACK"
+        app:layout_constraintBottom_toTopOf="@+id/textView26"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView23"
+        app:layout_constraintVertical_bias="0.667" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,17 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/bckImg"
-    tools:context=".Options">
+    tools:context=".OptionsMenu">
 
     <Button
-        android:id="@+id/optionsReturnButton"
-        android:layout_width="170dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="120dp"
-        android:layout_marginBottom="25dp"
+        android:id="@+id/rturnMenu"
+        android:layout_width="207dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="102dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="102dp"
+        android:layout_marginBottom="23dp"
         android:background="@drawable/rounded_button"
+        android:foregroundGravity="center_horizontal"
+        android:gravity="center"
         android:text="BACK"
         android:textColor="?attr/tC"
         app:layout_constraintBottom_toTopOf="@+id/textView11"
@@ -32,9 +34,11 @@
         android:gravity="center|left"
         android:text="Cloud Storage Backup"
         android:textColor="?attr/tC"
-        android:textSize="16dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/switch4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        tools:ignore="RtlHardcoded" />
 
     <TextView
         android:id="@+id/textView14"
@@ -42,12 +46,15 @@
         android:layout_height="42dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="2dp"
         android:gravity="center|left"
         android:text="Language"
         android:textColor="?attr/tC"
-        android:textSize="16dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/textView15"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/themeTextView4" />
+        app:layout_constraintTop_toBottomOf="@+id/themeTextView4"
+        tools:ignore="RtlHardcoded" />
 
     <TextView
         android:id="@+id/textView17"
@@ -59,7 +66,7 @@
         android:gravity="center"
         android:text="Default"
         android:textColor="?attr/tC"
-        android:textSize="16dp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView16"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
@@ -69,12 +76,15 @@
         android:layout_width="238dp"
         android:layout_height="42dp"
         android:layout_marginStart="40dp"
+        android:layout_marginEnd="2dp"
         android:gravity="center|left"
         android:text="UI Scaling"
         android:textColor="?attr/tC"
-        android:textSize="16dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/textView17"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        tools:ignore="RtlHardcoded" />
 
     <TextView
         android:id="@+id/textView15"
@@ -86,7 +96,7 @@
         android:gravity="center"
         android:text="English"
         android:textColor="?attr/tC"
-        android:textSize="16dp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView14"
         app:layout_constraintTop_toBottomOf="@+id/themeTextView4" />
@@ -100,7 +110,8 @@
         android:gravity="center|center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView13"
-        app:layout_constraintTop_toBottomOf="@+id/switch3" />
+        app:layout_constraintTop_toBottomOf="@+id/switch3"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <TextView
         android:id="@+id/textView10"
@@ -111,9 +122,11 @@
         android:gravity="center|left"
         android:text="Debugging Mode"
         android:textColor="?attr/tC"
-        android:textSize="16dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/switch3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        tools:ignore="RtlHardcoded" />
 
     <Switch
         android:id="@+id/switch3"
@@ -124,7 +137,8 @@
         android:gravity="center|center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/switch2" />
+        app:layout_constraintTop_toBottomOf="@+id/switch2"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <TextView
         android:id="@+id/textView8"
@@ -134,11 +148,13 @@
         android:layout_marginTop="6dp"
         android:filterTouchesWhenObscured="true"
         android:gravity="center|left"
-        android:text="Online Visability"
+        android:text="Online Visibility"
         android:textColor="?attr/tC"
-        android:textSize="16dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/switch2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        tools:ignore="RtlHardcoded" />
 
     <Switch
         android:id="@+id/switch2"
@@ -148,7 +164,8 @@
         android:gravity="center|center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/switch1" />
+        app:layout_constraintTop_toBottomOf="@+id/switch1"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <TextView
         android:id="@+id/textView7"
@@ -159,9 +176,11 @@
         android:gravity="center|left"
         android:text="Share analytics"
         android:textColor="?attr/tC"
-        android:textSize="16dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/switch1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/themeTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/themeTextView"
+        tools:ignore="RtlHardcoded" />
 
     <TextView
         android:id="@+id/themeTextView"
@@ -169,10 +188,11 @@
         android:layout_height="48dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="64dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="36dp"
         android:text="Options"
         android:textColor="?attr/tC"
         android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -182,9 +202,11 @@
         android:layout_height="48dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="13dp"
+        android:layout_marginEnd="36dp"
         android:text="Accessibility"
         android:textColor="?attr/tC"
         android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switch4" />
 
@@ -199,23 +221,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView7"
-        app:layout_constraintTop_toBottomOf="@+id/themeTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/themeTextView"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="335dp"
         android:layout_height="32dp"
         android:layout_marginStart="38dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="23dp"
         android:layout_marginEnd="38dp"
         android:gravity="center"
         android:text="Gollect V0.0.25 - 21/06/2022"
-        android:textSize="20dp"
         android:textColor="?attr/tC"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/optionsReturnButton" />
+        app:layout_constraintTop_toBottomOf="@+id/rturnMenu" />
 
     <TextView
         android:id="@+id/textView12"

@@ -9,6 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Gollect">
         <activity
+            android:name=".NewOptionsMenu"
+            android:exported="false" />
+        <activity
             android:name=".Graph"
             android:exported="false" />
         <activity
