@@ -34,6 +34,8 @@ public class SelectedCollectionPage extends AppCompatActivity implements View.On
     private TextView addItemButton;
     private FirebaseAuth mAuth;
 
+    private Button cancelMenu;
+    private Button graph;
     private static final String TAG = "SelectedCollectionPage";
 
     public ArrayList<Item> itemList = new ArrayList<>();
@@ -98,6 +100,12 @@ public class SelectedCollectionPage extends AppCompatActivity implements View.On
 
         addItemButton = (Button) findViewById(R.id.addItemBtn);
         addItemButton.setOnClickListener(this);
+
+        cancelMenu = (Button)  findViewById(R.id.selColReturnToMain);
+        cancelMenu.setOnClickListener(this);
+
+        graph = (Button) findViewById(R.id.graphBtn);
+        graph.setOnClickListener(this);
     }
 
 
@@ -129,6 +137,22 @@ public class SelectedCollectionPage extends AppCompatActivity implements View.On
 
                // startActivity(new Intent(this, CreateItemPage.class));
                 break;
+            case R.id.selColReturnToMain:
+                ReturnToMain();
+                break;
+            case R.id.graphBtn:
+                ShowGraph();
+                break;
+
         }
+    }
+
+    private void ReturnToMain(){
+            startActivity(new Intent(this, HomeOld.class));
+
+    }
+
+    private void ShowGraph(){
+        startActivity(new Intent(this, graph.class));
     }
 }
