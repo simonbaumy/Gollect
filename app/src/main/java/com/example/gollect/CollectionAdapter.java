@@ -1,6 +1,7 @@
 package com.example.gollect;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -79,7 +80,12 @@ public class CollectionAdapter extends ArrayAdapter<Collection> {
 
                         Log.i(TAG, "Size: " + collection.getCurrentGoal());
                         tv1.setText(collection.getName());
+                        tv2.setTextColor(Color.RED);
+                        if(Integer.parseInt(collection.getCurrentGoal()) >= Integer.parseInt(collection.getGoal())){
+                            tv2.setTextColor(Color.BLUE);
+                        }
                         tv2.setText(  collection.getCurrentGoal() + "/ "+collection.getGoal());
+
                         tv3.setText(collection.getType());
 
                     }
