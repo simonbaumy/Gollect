@@ -49,11 +49,12 @@ public class Graph extends AppCompatActivity {
 
     private static final String TAG = "Graph";
 
-    private static final String SET_LABEL = "Item Types";
+    private static final String SET_LABEL = "Item Types Percentages";
     private  String[] TYPES = new String [256];
     private  int[] TYPESNUMBER = new int [256];
     boolean found = false;
     private BarChart chart;
+    private int totalCount;
 
     private  int RealCount = 0;
     @Override
@@ -95,11 +96,13 @@ public class Graph extends AppCompatActivity {
                     }
                     if(found){
                         TYPESNUMBER[Arrays.asList(TYPES).indexOf(cType)] += 1;
+                        totalCount ++;
                     }
                   else{
                         TYPES[RealCount] = cType;
                         TYPESNUMBER[RealCount] += 1;
                       RealCount +=1;
+                      totalCount ++;
 
                     }
                     }
@@ -132,6 +135,16 @@ public class Graph extends AppCompatActivity {
         chart.setDrawGridBackground(false);
 
 
+       // YAxis yAxis = chart.getAxisLeft();
+       // yAxis.setGranularity(1);
+       // yAxis.setGranularityEnabled(true);
+
+
+
+
+
+
+
         XAxis xAxis = chart.getXAxis();
         xAxis.setGranularityEnabled(true);
         xAxis.setValueFormatter(new ValueFormatter() {
@@ -150,9 +163,12 @@ public class Graph extends AppCompatActivity {
             float x = i;
 
             Random random  = new Random();
-            float y =  (TYPESNUMBER[i]);
 
-            Log.d(TAG, "Value Addedd : ");
+            float totalCountFloat = (float)totalCount;
+            float y =  ((TYPESNUMBER[i])/totalCountFloat)*100;
+
+
+            Log.d(TAG, ""+y );
             values.add(new BarEntry(x, y));
         }
         BarDataSet set1 = new BarDataSet(values, SET_LABEL);
@@ -162,10 +178,20 @@ public class Graph extends AppCompatActivity {
 
         BarData data = new BarData(dataSets);
 
+
+        // set for whole data object (individual DataSets also possible)
+
+
+
+// YLabels are now called YAxis
+
+
         return data;
     }
 
     private void prepareChartData(BarData data) {
+
+
         data.setValueTextSize(12f);
         chart.setData(data);
         chart.invalidate();
