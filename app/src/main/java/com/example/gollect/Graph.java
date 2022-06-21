@@ -45,15 +45,9 @@ public class Graph extends AppCompatActivity {
 
     boolean getMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
 
-
-    private ListView listView;
-
     private FirebaseAuth mAuth;
-    public ArrayList<Item> itemList = new ArrayList<>();
+
     private static final String TAG = "Graph";
-
-    private  int COUNT = 0;
-
 
     private static final String SET_LABEL = "Item Types";
     private  String[] TYPES = new String [256];
@@ -85,17 +79,10 @@ public class Graph extends AppCompatActivity {
         userItems.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapShot) {
-                itemList.clear();
                 for (DataSnapshot itemSnapshot : dataSnapShot.getChildren()) {
 
-
                     String cType = itemSnapshot.child("itemType").getValue(String.class);
-
-
-
                     if(TYPES != null){
-
-
                     for(String x : TYPES){
                         if(x != null)
                         {
@@ -108,33 +95,15 @@ public class Graph extends AppCompatActivity {
                     }
                     if(found){
                         TYPESNUMBER[Arrays.asList(TYPES).indexOf(cType)] += 1;
-
-                     //   Log.d(TAG, cType + " Has  " +     TYPESNUMBER[Arrays.asList(TYPES).indexOf(cType)] );
                     }
                   else{
+                        TYPES[RealCount] = cType;
+                        TYPESNUMBER[RealCount] += 1;
                       RealCount +=1;
-                      TYPES[COUNT] = cType;
-                      TYPESNUMBER[COUNT] += 1;
-                     //   Log.d(TAG, cType + " FOUND AT COUNT " +   COUNT);
+
                     }
                     }
-                  COUNT++;
-
-                    Log.d(TAG, "COUNT: " +  COUNT);
-                    String cName = itemSnapshot.child("itemName").getValue(String.class);
-
-                    String cDate = itemSnapshot.child("itemDate").getValue(String.class);
-                    String cDescription = itemSnapshot.child("itemDescription").getValue(String.class);
-                    com.example.gollect.Item item = new com.example.gollect.Item("" + cName, "" + cType, "" + cDate, "" + cDescription);
-                    // Log.d(TAG, item.itemName);
-                    //itemList.add(item);
-
-                    // adapter.notifyDataSetChanged();
-
-
                 }
-
-
 
 
                 chart = findViewById(R.id.fragment_horizontalbarchart_chart);
@@ -157,21 +126,19 @@ public class Graph extends AppCompatActivity {
 
 
     }
-    public boolean Contains(String[] array, String value) {
-        for (String c : array)
-            if (c == value)
-                return true;
-        return false;
-    }
 
     private void configureChartAppearance() {
         chart.getDescription().setEnabled(false);
         chart.setDrawGridBackground(false);
 
+
         XAxis xAxis = chart.getXAxis();
+        xAxis.setGranularityEnabled(true);
         xAxis.setValueFormatter(new ValueFormatter() {
             @Override
             public String getFormattedValue(float value) {
+
+
                 return TYPES[(int) value];
             }
         });
@@ -184,6 +151,8 @@ public class Graph extends AppCompatActivity {
 
             Random random  = new Random();
             float y =  (TYPESNUMBER[i]);
+
+            Log.d(TAG, "Value Addedd : ");
             values.add(new BarEntry(x, y));
         }
         BarDataSet set1 = new BarDataSet(values, SET_LABEL);
