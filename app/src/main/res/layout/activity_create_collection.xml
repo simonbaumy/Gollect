@@ -12,23 +12,23 @@
         android:layout_width="207dp"
         android:layout_height="58dp"
         android:layout_marginStart="102dp"
+        android:layout_marginTop="259dp"
         android:layout_marginEnd="102dp"
-        android:layout_marginBottom="16dp"
         android:background="@drawable/rounded_button"
         android:foregroundGravity="center_horizontal"
         android:gravity="center"
         android:text="Create Collection"
         android:textColor="?attr/tC"
-        app:layout_constraintBottom_toTopOf="@+id/ReturnMenu"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
 
     <Button
         android:id="@+id/ReturnMenu"
         android:layout_width="207dp"
         android:layout_height="58dp"
         android:layout_marginStart="102dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="102dp"
         android:layout_marginBottom="64dp"
         android:background="@drawable/rounded_button"
@@ -38,7 +38,8 @@
         android:textColor="?attr/tC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CreateCollection" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout2"
