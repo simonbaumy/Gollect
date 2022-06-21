@@ -9,7 +9,7 @@
     <string name="sign_in">Sign In</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="email">Email</string>
-    <string name="register">Register</string>
+    <string name="register">REGISTER</string>
     <string name="app_name">Gollect</string>
     <string name="title_activity_home">Home</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>

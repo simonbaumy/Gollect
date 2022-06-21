@@ -56,6 +56,7 @@ public class CreateItemPage extends SelectedCollectionPage implements View.OnCli
     private ProgressBar progressBar;
     private ImageView imageView;
     private Button takePhoto;
+    private Button cancel;
     private Bitmap imageBitmap;
     private Context mContext;
     private FirebaseAuth mAuth;
@@ -89,6 +90,9 @@ public class CreateItemPage extends SelectedCollectionPage implements View.OnCli
 
         createItem = (Button) findViewById(R.id.createItem);
         createItem.setOnClickListener(this);
+
+        cancel = (Button) findViewById(R.id.cancelBtn);
+        cancel.setOnClickListener(this);
 
         takePhoto = (Button) findViewById(R.id.takePhoto);
         takePhoto.setOnClickListener(this);
@@ -137,9 +141,18 @@ public class CreateItemPage extends SelectedCollectionPage implements View.OnCli
         switch (view.getId()) {
             case R.id.createItem:
                 CreateTheItem();
-
+            case R.id.cancelBtn:
+                Cancel();
                 break;
         }
+    }
+
+    private void Cancel(){
+        editTextItemName.setText("");
+        editTextItemType.setText("");
+        editTextItemDescription.setText("");
+        editTextItemDate.setText("");
+        startActivity(new Intent(this, HomeOld.class));
     }
 
     private void CreateTheItem()  {

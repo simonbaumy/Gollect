@@ -27,6 +27,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     private ProgressBar progressBar;
     boolean getMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
     private FirebaseAuth mAuth;
+    private Button cancelReturn;
 
 
     @Override
@@ -52,11 +53,10 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         editTextPassword = (EditText) findViewById(R.id.register_password);
         editTextPasswordConfirm = (EditText) findViewById(R.id.register_passwordConfirm);
 
+        cancelReturn = (Button) findViewById(R.id.cancelRegis);
+        cancelReturn.setOnClickListener(this);
+
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
-
-
-
-
     }
 
     @Override
@@ -65,7 +65,14 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
             case R.id.register_button:
                 registerUser();
                 break;
+            case R.id.cancelRegis:
+                Cancel();
+                break;
         }
+    }
+
+    private void Cancel(){
+        startActivity(new Intent(this, MainActivity.class));
     }
 
     private void registerUser() {

@@ -8,32 +8,48 @@
     tools:context=".CreateItemPage">
 
     <Button
-        android:id="@+id/createItem"
+        android:id="@+id/takePhoto"
         android:layout_width="170dp"
         android:layout_height="52dp"
-        android:layout_marginStart="144dp"
-        android:layout_marginEnd="144dp"
-        android:layout_marginBottom="48dp"
-        android:text="Create Item"
-        android:textColor="@color/black"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/rounded_button"
+        android:text="Take Photo"
+        android:textColor="?attr/tC"
+        app:layout_constraintBottom_toTopOf="@+id/createItem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemPhoto" />
+
+    <Button
+        android:id="@+id/cancelBtn"
+        android:layout_width="170dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/rounded_button"
+        android:text="Cancel"
+        android:textColor="?attr/tC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/takePhoto"
+        android:id="@+id/createItem"
         android:layout_width="170dp"
         android:layout_height="52dp"
-        android:layout_marginStart="144dp"
-        android:layout_marginEnd="144dp"
-        android:layout_marginBottom="116dp"
-        android:text="Take Photo"
-        android:textColor="?attr/tC"
+        android:layout_marginStart="120dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/rounded_button"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Create Item"
+        android:textColor="?attr/tC"
+        app:layout_constraintBottom_toTopOf="@+id/cancelBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -41,11 +57,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="54dp"
-        android:layout_marginTop="288dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="54dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/itemDescription">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/create_item_date"
@@ -53,7 +69,8 @@
             android:layout_height="wrap_content"
             android:hint="Item Date"
             android:text=""
-            android:textColor="?attr/tC"/>
+            android:textColor="?attr/tC"
+            tools:ignore="TouchTargetSizeCheck" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -62,11 +79,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="54dp"
-        android:layout_marginTop="216dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="54dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/itemType">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/create_item_description"
@@ -74,7 +91,8 @@
             android:layout_height="wrap_content"
             android:hint="Item Description"
             android:text=""
-            android:textColor="?attr/tC"/>
+            android:textColor="?attr/tC"
+            tools:ignore="TouchTargetSizeCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -82,7 +100,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="54dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="54dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -94,7 +112,7 @@
             android:layout_height="wrap_content"
             android:hint="Item Name"
             android:text=""
-            android:textColor="?attr/tC"/>
+            android:textColor="?attr/tC" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -102,11 +120,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="54dp"
-        android:layout_marginTop="144dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="54dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/itemName">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/create_item_type"
@@ -114,22 +132,19 @@
             android:layout_height="wrap_content"
             android:hint="Item Type"
             android:text=""
-            android:textColor="?attr/tC"/>
+            android:textColor="?attr/tC" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView
         android:id="@+id/itemPhoto"
-        android:layout_width="282dp"
-        android:layout_height="178dp"
+        android:layout_width="221dp"
+        android:layout_height="143dp"
         android:layout_marginStart="54dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="54dp"
-        android:layout_marginBottom="54dp"
-        app:layout_constraintBottom_toTopOf="@+id/createItem"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/itemDate"
-        app:layout_constraintVertical_bias="0.454"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

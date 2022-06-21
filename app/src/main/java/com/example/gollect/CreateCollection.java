@@ -61,7 +61,6 @@ public class CreateCollection extends HomeOld implements View.OnClickListener{
             case R.id.CreateCollection:
                 CreateTheCollection();
             case R.id.ReturnMenu:
-
                 ReturnToMenu();
                 break;
         }

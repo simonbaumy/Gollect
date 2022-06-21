@@ -15,7 +15,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="6dp"
+        android:layout_marginBottom="9dp"
         android:background="@drawable/rounded_button"
         android:gravity="center|center_horizontal|center_vertical"
         android:text="⚙"
@@ -30,9 +30,12 @@
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="36dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="16dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintBottom_toTopOf="@+id/collectionList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
 
         <TextView
             android:id="@+id/textView2"
@@ -42,8 +45,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="Name"
-            android:textColor="?attr/tC"
             android:textAlignment="center"
+            android:textColor="?attr/tC"
             android:textStyle="bold" />
 
         <TextView
@@ -54,8 +57,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="Type"
-            android:textColor="?attr/tC"
             android:textAlignment="center"
+            android:textColor="?attr/tC"
             android:textStyle="bold" />
 
         <TextView
@@ -66,8 +69,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="Goal"
-            android:textColor="?attr/tC"
             android:textAlignment="center"
+            android:textColor="?attr/tC"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -76,22 +79,18 @@
         android:id="@+id/textView4"
         android:layout_width="146dp"
         android:layout_height="42dp"
-        android:layout_marginStart="133dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="132dp"
-        android:layout_marginBottom="13dp"
         android:foregroundGravity="fill_horizontal"
         android:gravity="center|center_horizontal"
         android:text="MyCollection"
-        android:textColor="?attr/tC"
         android:textAlignment="center"
+        android:textColor="?attr/tC"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/collectionList"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.042" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
