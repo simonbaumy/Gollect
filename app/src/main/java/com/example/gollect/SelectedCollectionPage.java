@@ -33,11 +33,14 @@ public class SelectedCollectionPage extends AppCompatActivity implements View.On
 
     private Button cancelMenu;
     private Button graph;
+    public ArrayList<Item> itemList = new ArrayList<>();
     private static final String TAG = "SelectedCollectionPage";
 
-    public ArrayList<Item> itemList = new ArrayList<>();
+
 
     private DatabaseReference mDatabase;
+
+    public String key;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -54,8 +57,7 @@ public class SelectedCollectionPage extends AppCompatActivity implements View.On
 
 
         Intent intent = getIntent();
-
-        String key = intent.getStringExtra("key");
+        key = intent.getStringExtra("key");
 
         listView = (ListView) findViewById(R.id.itemList);
         ItemAdapter adapter = new ItemAdapter(getApplicationContext(), 0, itemList);
@@ -150,6 +152,13 @@ public class SelectedCollectionPage extends AppCompatActivity implements View.On
     }
 
     private void ShowGraph(){
-        startActivity(new Intent(this, Graph.class));
+
+        Intent intent = getIntent();
+        String cKey = intent.getStringExtra("key");
+
+        Intent showItem = new Intent(getApplicationContext(), Graph.class);
+        showItem.putExtra("key",cKey);
+        startActivity(showItem);
+
     }
 }
