@@ -105,7 +105,7 @@
         android:layout_marginEnd="132dp"
         android:foregroundGravity="fill_horizontal"
         android:gravity="center|center_horizontal"
-        android:text="MyCollection"
+        android:text="Collections"
         android:textAlignment="center"
         android:textColor="?attr/tC"
         android:textSize="20sp"
