@@ -69,6 +69,7 @@
             android:layout_height="wrap_content"
             android:hint="Item Date"
             android:text=""
+            android:textColorHint="#616161"
             android:textColor="?attr/tC"
             tools:ignore="TouchTargetSizeCheck" />
 
@@ -92,6 +93,7 @@
             android:hint="Item Description"
             android:text=""
             android:textColor="?attr/tC"
+            android:textColorHint="#616161"
             tools:ignore="TouchTargetSizeCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -112,6 +114,7 @@
             android:layout_height="wrap_content"
             android:hint="Item Name"
             android:text=""
+            android:textColorHint="#616161"
             android:textColor="?attr/tC" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -132,6 +135,7 @@
             android:layout_height="wrap_content"
             android:hint="Item Type"
             android:text=""
+            android:textColorHint="#616161"
             android:textColor="?attr/tC" />
     </com.google.android.material.textfield.TextInputLayout>
 

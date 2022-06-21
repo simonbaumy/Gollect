@@ -39,8 +39,6 @@ public class CollectionAdapter extends ArrayAdapter<Collection> {
 
     public String cKey;
 
-    boolean getMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
-
     public CollectionAdapter(Context context, int resource, List<Collection> collectionList)
     {
         super(context,resource,collectionList);

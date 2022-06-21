@@ -18,7 +18,7 @@
         android:layout_marginBottom="9dp"
         android:background="@drawable/rounded_button"
         android:gravity="center|center_horizontal|center_vertical"
-        android:text="⚙"
+        android:text="S"
         android:textAlignment="center"
         android:textColor="?attr/tC"
         android:textSize="22dp"

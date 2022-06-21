@@ -15,7 +15,7 @@
         android:layout_marginEnd="144dp"
         android:layout_marginBottom="48dp"
         android:text="GO BACK"
-        android:textColor="#000000"
+        android:textColor="?attr/tC"
         android:background="@drawable/rounded_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,6 +35,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColorHint="#616161"
+            android:textColor="?attr/tC"
             android:hint="Item Date" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -52,6 +54,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColorHint="#616161"
+            android:textColor="?attr/tC"
             android:hint="Item Description" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -69,7 +73,10 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Item Name" />
+            android:hint="Item Name"
+            android:textColorHint="#616161"
+            android:textColor="?attr/tC"
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -86,6 +93,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="?attr/tC"
+            android:textColorHint="#616161"
             android:hint="Item Type" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -97,7 +106,6 @@
         android:layout_marginTop="54dp"
         android:layout_marginEnd="54dp"
         android:layout_marginBottom="54dp"
-        app:layout_constraintBottom_toTopOf="@+id/createItem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/itemDate"
