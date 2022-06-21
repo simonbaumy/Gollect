@@ -9,7 +9,7 @@
         android:id="@+id/collectionName"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginLeft="65dp"
+        android:layout_marginLeft="62dp"
         android:gravity="center|center_vertical"
         android:text="collection name"
         android:textSize="12dp" />
@@ -18,7 +18,7 @@
         android:id="@+id/collectionType"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="195dp"
         android:gravity="center_vertical"
         android:text="collection Type"
         android:textSize="10dp" />
@@ -27,7 +27,7 @@
         android:id="@+id/collectionGoal"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginLeft="335dp"
+        android:layout_marginLeft="314dp"
         android:gravity="center_vertical"
         android:text="collection goal"
         android:textSize="10dp" />
