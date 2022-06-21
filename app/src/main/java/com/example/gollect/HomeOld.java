@@ -38,6 +38,7 @@ public class HomeOld extends AppCompatActivity implements View.OnClickListener{
     private TextView addCollectionButton;
 
     private Button settingsButton;
+    private Button opttionsButton;
 
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
@@ -95,6 +96,9 @@ boolean getMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.M
 
         settingsButton = (Button) findViewById(R.id.settingsButton);
         settingsButton.setOnClickListener(this);
+
+        opttionsButton = (Button) findViewById(R.id.optionBtn);
+        opttionsButton.setOnClickListener(this);
     }
 
 
@@ -126,6 +130,9 @@ boolean getMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.M
                 break;
             case R.id.settingsButton:
                 startActivity(new Intent(this, Settings.class));
+                break;
+            case  R.id.optionBtn:
+                startActivity(new Intent(this, Options.class));
                 break;
 
         }

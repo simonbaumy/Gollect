@@ -111,8 +111,9 @@
             android:layout_height="wrap_content"
             android:hint="Item Name"
             android:text=""
+            android:textColor="?attr/tC"
             android:textColorHint="#616161"
-            android:textColor="?attr/tC" />
+            tools:ignore="TouchTargetSizeCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -132,8 +133,9 @@
             android:layout_height="wrap_content"
             android:hint="Item Type"
             android:text=""
+            android:textColor="?attr/tC"
             android:textColorHint="#616161"
-            android:textColor="?attr/tC" />
+            tools:ignore="TouchTargetSizeCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView
